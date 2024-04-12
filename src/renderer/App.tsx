@@ -18,6 +18,7 @@ import { FishingPage } from './pages/FishingPage';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
+  loadClasses();
 
   return (
     <Router initialEntries={['/settings']}>
