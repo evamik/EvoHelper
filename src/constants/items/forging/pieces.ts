@@ -47,6 +47,17 @@ export const pieces: { [id: string]: EvoItem } = {
     source: 'Blacksmith',
     materialFor: ["Malevolent", "Soulshot", "Cruel Blade", "Cursed Blade", "Blinding Light of Destiny", "Sword of the Occult", "Mystical"]
   },
+  'Dull Armor Piece': {
+    id: 'Dull Armor Piece',
+    restriction: EvoItemRestictions.FORGE,
+    rarity: EvoRarity.UNCOMMON,
+    icon: 'ArmorPiece',
+    description: '',
+    effects: [],
+    crafting: [],
+    source: 'Blacksmith',
+    materialFor: ["Hades' Artifact"]
+  },
   'Rare Armor Piece': {
     id: 'Rare Armor Piece',
     restriction: EvoItemRestictions.FORGE,
