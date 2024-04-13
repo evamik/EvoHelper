@@ -21,7 +21,7 @@ export default function App() {
   loadClasses();
 
   return (
-    <Router initialEntries={['/settings']}>
+    <Router initialEntries={[ '/characters' ]}>
       <ThemeProvider theme={theme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
