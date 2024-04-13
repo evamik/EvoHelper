@@ -12,4 +12,5 @@ export interface EvoItem {
   source: string;
   sourceShort?: string;
   crafting?: string[];
+  materialFor?: string[];
 }

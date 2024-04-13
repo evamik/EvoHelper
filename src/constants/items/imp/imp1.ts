@@ -12,6 +12,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: ['+800 Intelligence', '+3750 Mana', '+5% Cooldown speed'],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ["Legend of Freya", "Book of Hylia", "Concentrated Energy"]
   },
   'Demonic Aggression': {
     id: 'Demonic Aggression',
@@ -37,6 +38,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: ['+4000 Damage', '+15% Attack speed'],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ['Soulshot']
   },
   "Neptune's Eye": {
     id: "Neptune's Eye",
@@ -47,6 +49,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: ['+11 000 Health', '+8250 Mana'],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ["Tainted Neptune's Eye"]
   },
   'The Grandfather': {
     id: 'The Grandfather',
@@ -57,6 +60,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: ['+1600 Damage', '+200 Armor'],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ['Blinding Light of Destiny']
   },
   'The Patriarch': {
     id: 'The Patriarch',
@@ -70,6 +74,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     ],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ['Cruel Blade']
   },
   "Winter's Heart": {
     id: "Winter's Heart",
@@ -80,6 +85,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: ['+800 Intelligence', '+80 Mana Regen', '+5% Cooldown speed'],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ["Winter's Soul"]
   },
   'Blessing of Darkness': {
     id: 'Blessing of Darkness',
@@ -90,6 +96,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ["Esper's Ring", "Hyperion", "Glow Orb", "Vagabond", "Malevolent", "Storm Sanctuary", "Deathgazer", "Blade of Despair", "Mystery", "Eve", "Drakath's Armor", "Necrotic Sword of Doom"]
   },
   'Mantle of Darkness': {
     id: 'Mantle of Darkness',
@@ -101,6 +108,7 @@ export const imp1Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'City of Illusions',
     sourceShort: 'Imp 1',
+    materialFor: ["Paw of Lightning", "Darkforge Plate", "Mystral Staff", "Malevolent", "Storm Sanctuary", "Book of Hylia", "Sword of the Occult", "Concentrated Energy", "Mystery", "Link to the Past", "Titan's Mitt"]
   },
   'Sphere of Doom': {
     id: 'Sphere of Doom',
@@ -110,5 +118,6 @@ export const imp1Items: { [id: string]: EvoItem } = {
     description: 'Misery.',
     effects: [],
     source: 'City of Illusions',
+    materialFor: ["Everlasting Youth", "Sovereign Sword", "Crisis Core", "Drakath's Armor", "Moon Pearl", "Necrotic Sword of Doom", "Sinister Staff", "Sword of Akasha", "Ungodly Reaper of Nulgath"]
   },
 };

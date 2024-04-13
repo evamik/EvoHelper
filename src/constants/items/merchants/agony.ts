@@ -11,7 +11,8 @@ export const agonyItems: { [id: string]: EvoItem } = {
     description: 'How can you reach this far?',
     effects: [],
     source: 'Agony merchant',
-    sourceShort: '4M gold, 2k shards'
+    sourceShort: '4M gold, 2k shards',
+    materialFor: ['Blessing of Agony']
   },
   "Blessing of Agony": {
     id: "Blessing of Agony",
@@ -27,5 +28,6 @@ export const agonyItems: { [id: string]: EvoItem } = {
       'Agony',
     ],
     source: 'Agony merchant',
+    materialFor: ['Eve']
   },
 }

@@ -29,6 +29,7 @@ export const puzzleItems: { [id: string]: EvoItem } = {
     description: '',
     effects: ['+30 Armor', '+300 Health', '+300 Mana'],
     source: 'Puzzle sanctuary',
+    materialFor: ['Ocean Cuirass']
   },
   'Scroll of the Lich': {
     id: 'Scroll of the Lich',

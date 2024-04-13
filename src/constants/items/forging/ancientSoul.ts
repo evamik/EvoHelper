@@ -3,7 +3,7 @@ import { EvoRarity } from '../../rarity';
 import { EvoItem } from '../item';
 
 export const ancientSoulItems: { [id: string]: EvoItem } = {
-  Pandora: {
+  'Pandora': {
     id: 'Pandora',
     restriction: EvoItemRestictions.INT,
     rarity: EvoRarity.FORGED,
@@ -17,6 +17,7 @@ export const ancientSoulItems: { [id: string]: EvoItem } = {
     ],
     crafting: ['Tome of the Unlife', 'Emerald', 'Sapphire', 'Amethyst', 'Ruby'],
     source: 'Ancient Soul',
+    materialFor: ['Vagabond']
   },
   'Hell Diamond': {
     id: 'Hell Diamond',
@@ -35,6 +36,7 @@ export const ancientSoulItems: { [id: string]: EvoItem } = {
       'Cursed Artifact',
     ],
     source: 'Ancient Soul',
+    materialFor: ['Summoning Codex', 'Glow Orb']
   },
   'Summoning Codex': {
     id: 'Summoning Codex',
@@ -56,6 +58,7 @@ export const ancientSoulItems: { [id: string]: EvoItem } = {
       'Ruby',
     ],
     source: 'Ancient Soul',
+    materialFor: ['Ancient Dragon Book']
   },
   'Windtalker': {
     id: 'Windtalker',
@@ -101,6 +104,7 @@ export const ancientSoulItems: { [id: string]: EvoItem } = {
       'Diamond',
     ],
     source: 'Ancient Soul',
+    materialFor: ['Storm Sanctuary']
   },
   "Tainted Neptune's Eye": {
     id: "Tainted Neptune's Eye",
@@ -123,5 +127,6 @@ export const ancientSoulItems: { [id: string]: EvoItem } = {
       'Diamond',
     ],
     source: 'Ancient Soul',
+    materialFor: ['Royal Crown']
   },
 };

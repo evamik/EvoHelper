@@ -11,6 +11,7 @@ export const mysteryItems: { [id: string]: EvoItem } = {
     description: 'Stabilizes the combination of powerful materials.',
     effects: [],
     source: 'Mystery forging items',
+    materialFor: ["Mystery", "Mystical", "Draconic Trinity", "Twilight", "Eve", "Light Synthesis", "Light Synthesis", "Curse of Hell", "Fire Stone", "Crystal of Eternal Flame", "Hellish Behemoth"]
   },
   Mystery: {
     id: 'Mystery',
@@ -21,6 +22,7 @@ export const mysteryItems: { [id: string]: EvoItem } = {
     effects: [],
     crafting: ['Mantle of Darkness', 'Blessing of Darkness', 'Nether Reactor'],
     source: 'Mystery forging items',
+    materialFor: ["Destruction", "Legend of Freya", "Twilight", "Curse of Hell", "Ungodly Reaper of Nulgath"]
   },
   Mystical: {
     id: 'Mystical',
@@ -36,6 +38,7 @@ export const mysteryItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Mystery forging items',
+    materialFor: ["Claw of Midnight", "Nightshadow", "Curse of Hell", "Ascended Light of Destiny", "Consecration", "Sword of Akasha", "Ungodly Reaper of Nulgath"]
   },
   'Draconic Trinity': {
     id: 'Draconic Trinity',
@@ -51,6 +54,7 @@ export const mysteryItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Mystery forging items',
+    materialFor: ["Cryocell", "Destruction", "Malevolent", "Storm Sanctuary", "Ancient Dragon Book", "Final Emerald Blade", "Eclair La Demes", "Dragon Totem", "Winter's Soul", "Dragon Bow", "Claw of Midnight", "Nightshadow", "Blasting Rod", "Windspeaker", "Legend of Freya", "Book of Hylia", "Soulshot", "Legendary Dragon Orb", "Cruel Blade", "Cursed Blade", "Starlight Crystal", "Blinding Light of Destiny", "Dragonforge Plate", "Blade of Despair", "Sword of the Occult", "Concentrated Energy", "Twilight", "Curse of Hell", "Titan's Mitt"]
   },
   Twilight: {
     id: 'Twilight',
@@ -66,6 +70,7 @@ export const mysteryItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Mystery forging items',
+    materialFor: ["Baptism", "Aerielis", "Blade of Awe", "Cosmos", "Ender", "Fate", "Guardian Force", "Hope", "Kiea's Tale", "Raising Heart", "Reinforce", "Rune Sihill", "Tooth of Belial", "Virtue", "Blessed Aerielis", "Blessed Blade of Awe", "Blessed Cosmos", "Blessed Ender", "Blessed Fate", "Blessed Guardian Force", "Blessed Hope", "Blessed Kiea's Tale", "Blessed Raising Heart", "Blessed Reinforce", "Blessed Rune Sihill", "Blessed Tooth of Belial", "Blessed Virtue"]
   },
   Eve: {
     id: 'Eve',
@@ -81,6 +86,7 @@ export const mysteryItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Mystery forging items',
+    materialFor: ["Baptism", "Aerielis", "Blade of Awe", "Cosmos", "Ender", "Fate", "Guardian Force", "Hope", "Kiea's Tale", "Raising Heart", "Reinforce", "Rune Sihill", "Tooth of Belial", "Virtue", "Blessed Aerielis", "Blessed Blade of Awe", "Blessed Cosmos", "Blessed Ender", "Blessed Fate", "Blessed Guardian Force", "Blessed Hope", "Blessed Kiea's Tale", "Blessed Raising Heart", "Blessed Reinforce", "Blessed Rune Sihill", "Blessed Tooth of Belial", "Blessed Virtue"]
   },
   Baptism: {
     id: 'Baptism',
@@ -102,5 +108,6 @@ export const mysteryItems: { [id: string]: EvoItem } = {
     effects: [],
     crafting: ['Nether Reactor', 'Nether Reactor'],
     source: 'Mystery forging items',
+    materialFor: ["King's Royal Crown", "Queen's Royal Crownn", 'Imperial Royal Crown', 'Ascended Light of Destiny']
   },
 };

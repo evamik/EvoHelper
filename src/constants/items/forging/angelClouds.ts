@@ -19,6 +19,7 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Diamond',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Starlight Crystal']
   },
   "Esper's Ring": {
     id: "Esper's Ring",
@@ -41,6 +42,7 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Blessing of Darkness',
     ],
     source: 'Angel of Clouds',
+    materialFor: ["Esper's Blood"]
   },
   'Darkforge Plate': {
     id: 'Darkforge Plate',
@@ -58,8 +60,9 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Mantle of Darkness',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Dragonforge Plate']
   },
-  Hyperion: {
+  'Hyperion': {
     id: 'Hyperion',
     restriction: EvoItemRestictions.MELEE,
     rarity: EvoRarity.FORGED,
@@ -78,6 +81,7 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Diamond',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Uranus']
   },
   'Mystral Staff': {
     id: 'Mystral Staff',
@@ -96,6 +100,7 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Mantle of Darkness',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Blasting Rod']
   },
   'Glow Orb': {
     id: 'Glow Orb',
@@ -106,8 +111,9 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
     effects: ['+400 All stats', '+10% Cooldown reduction'],
     crafting: ['Hell Diamond', 'Ruby', 'Diamond', 'Blessing of Darkness'],
     source: 'Angel of Clouds',
+    materialFor: ['Legendary Dragon Orb']
   },
-  Vagabond: {
+  'Vagabond': {
     id: 'Vagabond',
     restriction: EvoItemRestictions.INT,
     rarity: EvoRarity.FORGED,
@@ -129,8 +135,9 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Blessing of Darkness',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Ring of the Hell Lord']
   },
-  Cryocell: {
+  'Cryocell': {
     id: 'Cryocell',
     restriction: EvoItemRestictions.MELEE,
     rarity: EvoRarity.FORGED,
@@ -150,8 +157,9 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Sovereign Sword']
   },
-  Destruction: {
+  'Destruction': {
     id: 'Destruction',
     restriction: EvoItemRestictions.INT,
     rarity: EvoRarity.FORGED,
@@ -172,8 +180,9 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Sinister Staff']
   },
-  Malevolent: {
+  'Malevolent': {
     id: 'Malevolent',
     restriction: EvoItemRestictions.MELEE_AGI,
     rarity: EvoRarity.FORGED,
@@ -194,6 +203,7 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Sword of Akasha']
   },
   'Storm Sanctuary': {
     id: 'Storm Sanctuary',
@@ -217,5 +227,6 @@ export const angelCloudsItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Clouds',
+    materialFor: ['Prismatic Barrier']
   },
 };
