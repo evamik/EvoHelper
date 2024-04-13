@@ -12,7 +12,7 @@ export function EvoStash(props: EvoStashProps) {
     <Box {...rest}>
       {itemIds.map((id, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <EvoItemRenderer key={id + index} id={id} />
+        <EvoItemRenderer key={id + index} id={id} minimal={true} />
       ))}
     </Box>
   );
