@@ -19,6 +19,7 @@ export const magicWizardItems: { [id: string]: EvoItem } = {
       'Cursed Artifact',
     ],
     source: 'Magic Wizard',
+    materialFor: ['Destruction']
   },
   'Horadric Staff': {
     id: 'Horadric Staff',
@@ -40,6 +41,7 @@ export const magicWizardItems: { [id: string]: EvoItem } = {
       'Emerald',
     ],
     source: 'Magic Wizard',
+    materialFor: ['Scepter of Mastery']
   },
   'Scepter of Mastery': {
     id: 'Scepter of Mastery',
@@ -64,5 +66,6 @@ export const magicWizardItems: { [id: string]: EvoItem } = {
       "Harbinger's Essence",
     ],
     source: 'Magic Wizard',
+    materialFor: ['Dragon Totem']
   },
 };

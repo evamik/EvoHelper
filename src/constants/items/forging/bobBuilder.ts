@@ -30,6 +30,7 @@ export const bobBuilderItems: { [id: string]: EvoItem } = {
       'Ruby',
     ],
     source: 'Bob the Builder',
+    materialFor: ['Magic Mirror']
   },
   Tremor: {
     id: 'Tremor',
@@ -53,5 +54,6 @@ export const bobBuilderItems: { [id: string]: EvoItem } = {
       'Diamond',
     ],
     source: 'Bob the Builder',
+    materialFor: ['Rising Ash']
   },
 };

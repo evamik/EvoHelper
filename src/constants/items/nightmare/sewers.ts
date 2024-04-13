@@ -55,6 +55,7 @@ export const sewersItems: { [id: string]: EvoItem } = {
       'This stone was once known for its supreme control over the All-Fire. However, after a century, its power has weakened, but still retains its fiery touch.',
     effects: ['+140 All stats'],
     source: 'Forgotten Sewers',
+    materialFor: ['Hell Diamond']
   },
   'Shield of Unending Flame': {
     id: 'Shield of Unending Flame',
@@ -95,5 +96,6 @@ export const sewersItems: { [id: string]: EvoItem } = {
       'An orb coated with the soul of the filthy being, The One. Used in crafting powerful equipments with its tained powers.',
     effects: [],
     source: 'Forgotten Sewers',
+    materialFor: ["Contúirteacha", "Hand of God", "The One's Head", "The One's Head", "The One's Head"]
   },
 };

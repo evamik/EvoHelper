@@ -107,6 +107,7 @@ export const cursedHeavenItems: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Cursed Heaven',
     sourceShort: 'M1',
+    materialFor: ['Angelic Hope']
   },
   'Angel Feather': {
     id: 'Angel Feather',
@@ -117,6 +118,7 @@ export const cursedHeavenItems: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Cursed Heaven',
     sourceShort: 'M1',
+    materialFor: ['Angelic Hope']
   },
   'Angel Fire': {
     id: 'Angel Fire',
@@ -127,5 +129,6 @@ export const cursedHeavenItems: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Cursed Heaven',
     sourceShort: 'M1',
+    materialFor: ['Angelic Hope']
   },
 };

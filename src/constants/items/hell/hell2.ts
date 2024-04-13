@@ -14,6 +14,7 @@ export const hell2Items: { [id: string]: EvoItem } = {
     effects: ['150 Armor'],
     source: 'Abyssal Labyrinth',
     sourceShort: 'h2',
+    materialFor: ["Tremor", "Esper's Ring"]
   },
   'Megaton Blades': {
     id: 'Megaton Blades',
@@ -39,6 +40,7 @@ export const hell2Items: { [id: string]: EvoItem } = {
     effects: ['+500 Intelligence', '+2500 Mana'],
     source: 'Abyssal Labyrinth',
     sourceShort: 'h2',
+    materialFor: ['Pandora']
   },
   "Angel's Sanctuary": {
     id: "Angel's Sanctuary",
@@ -99,5 +101,6 @@ export const hell2Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Abyssal Labyrinth',
     sourceShort: 'h2',
+    materialFor: ["Blade of the Ruined King", "Moonfang", "Runic Bow", "Song of Ice", "Hell Diamond", "Magic Mirror", "Bethrezen's Flame", "Deathgazer", "Ancient Dragon Book", "Cursed Blade", "Arthas' Head", "Arthas' Head", "Arthas' Head"]
   },
 };

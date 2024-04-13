@@ -49,6 +49,7 @@ export const flameItems: { [id: string]: EvoItem } = {
     ],
     crafting: ['Dragon Totem', 'Fire Stone'],
     source: 'Flame merchant',
+    materialFor: ['Cane of Byrna']
   },
   'Royal Crown': {
     id: 'Royal Crown',
@@ -64,6 +65,7 @@ export const flameItems: { [id: string]: EvoItem } = {
     ],
     crafting: ["Tainted Neptune's Eye", 'Fire Stone'],
     source: 'Flame merchant',
+    materialFor: ["King's Royal Crown", "Queen's Royal Crownn", 'Imperial Royal Crown']
   },
   "King's Royal Crown": {
     id: "King's Royal Crown",

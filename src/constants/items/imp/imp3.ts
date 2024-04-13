@@ -17,6 +17,7 @@ export const imp3Items: { [id: string]: EvoItem } = {
     ],
     source: 'Punishment Chamber',
     sourceShort: 'Imp 3',
+    materialFor: ["Queen's Agony"]
   },
   'Devil Bow': {
     id: 'Devil Bow',
@@ -102,6 +103,7 @@ export const imp3Items: { [id: string]: EvoItem } = {
     ],
     source: 'Punishment Chamber',
     sourceShort: 'Imp 3',
+    materialFor: ['Eternal Phoenix']
   },
   'Fire Demon': {
     id: 'Fire Demon',
@@ -112,6 +114,7 @@ export const imp3Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Punishment Chamber',
     sourceShort: 'Imp 3',
+    materialFor: ['Incinerator']
   },
   'Fire Lotus': {
     id: 'Fire Lotus',
@@ -122,5 +125,6 @@ export const imp3Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Punishment Chamber',
     sourceShort: 'Imp 3',
+    materialFor: ['Incinerator']
   },
 };

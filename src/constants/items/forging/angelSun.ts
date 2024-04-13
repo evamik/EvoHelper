@@ -17,6 +17,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
     ],
     crafting: ["Atlantean's Tome", 'Mystery', 'Draconic Trinity'],
     source: 'Angel of Sun',
+    materialFor: ['Link to the Past']
   },
   'Book of Hylia': {
     id: 'Book of Hylia',
@@ -41,6 +42,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Holy Grimoire']
   },
   Soulshot: {
     id: 'Soulshot',
@@ -64,6 +66,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Consecration']
   },
   'Legendary Dragon Orb': {
     id: 'Legendary Dragon Orb',
@@ -82,6 +85,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Heart of Behemoth']
   },
   'Cruel Blade': {
     id: 'Cruel Blade',
@@ -100,6 +104,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Ungodly Reaper of Nulgath']
   },
   'Cursed Blade': {
     id: 'Cursed Blade',
@@ -122,6 +127,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Necrotic Sword of Doom']
   },
   'Starlight Crystal': {
     id: 'Starlight Crystal',
@@ -143,6 +149,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Moon Pearl']
   },
   'Blinding Light of Destiny': {
     id: 'Blinding Light of Destiny',
@@ -165,6 +172,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Ascended Light of Destiny']
   },
   'Dragonforge Plate': {
     id: 'Dragonforge Plate',
@@ -185,6 +193,7 @@ export const angelSunItems: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Sun',
+    materialFor: ['Demonforge Plate']
   },
   'Blade of Despair': {
     id: 'Blade of Despair',

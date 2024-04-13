@@ -91,5 +91,6 @@ export const hell1Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Oblivion',
     sourceShort: 'h1',
+    materialFor: ["Blade of the Ruined King", "Runic Bow", "Hell Diamond", "Tremor", "Destruction", "Diablo's Head", "Diablo's Head", "Diablo's Head"]
   },
 };
