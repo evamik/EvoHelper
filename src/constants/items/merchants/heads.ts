@@ -16,7 +16,6 @@ export const headItems: { [id: string]: EvoItem } = {
       "Hydra's Bane",
     ],
     source: 'Heads merchant',
-    materialFor: ['Essence of Nightmare']
   },
   "The One's Head": {
     id: "The One's Head",
@@ -31,7 +30,6 @@ export const headItems: { [id: string]: EvoItem } = {
       "Black Soul",
     ],
     source: 'Heads merchant',
-    materialFor: ['Essence of Nightmare']
   },
   "Diablo's Head": {
     id: "Diablo's Head",
@@ -46,7 +44,6 @@ export const headItems: { [id: string]: EvoItem } = {
       "Diabolic Orb",
     ],
     source: 'Heads merchant',
-    materialFor: ['Essence of Hell']
   },
   "Arthas' Head": {
     id: "Arthas' Head",
@@ -61,7 +58,6 @@ export const headItems: { [id: string]: EvoItem } = {
       "Cursed Artifact",
     ],
     source: 'Heads merchant',
-    materialFor: ['Essence of Hell']
   },
   "Death's Head": {
     id: "Death's Head",
@@ -76,7 +72,6 @@ export const headItems: { [id: string]: EvoItem } = {
       "Sealed Demise",
     ],
     source: 'Heads merchant',
-    materialFor: ['Essence of Hell']
   },
   "Essence of Nightmare": {
     id: "Essence of Nightmare",
@@ -92,7 +87,6 @@ export const headItems: { [id: string]: EvoItem } = {
       "Diamond"
     ],
     source: 'Heads merchant',
-    materialFor: ['Blessing of Agony']
   },
   "Essence of Hell": {
     id: "Essence of Hell",
@@ -109,6 +103,5 @@ export const headItems: { [id: string]: EvoItem } = {
       "Diamond"
     ],
     source: 'Heads merchant',
-    materialFor: ['Blessing of Agony']
   },
 }

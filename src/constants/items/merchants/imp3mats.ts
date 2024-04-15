@@ -12,7 +12,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
     effects: [],
     crafting: [],
     source: 'Imp3Mats',
-    materialFor: ['Crystal of Eternal Flame', 'Blessing of Agony', "Drakath's Armor"]
   },
   'Incinerator': {
     id: 'Incinerator',
@@ -26,7 +25,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Fire Lotus',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Curse of Hell', 'Fire Stone']
   },
   'Curse of Hell': {
     id: 'Curse of Hell',
@@ -43,7 +41,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Fire Stone']
   },
   'Fire Stone': {
     id: 'Fire Stone',
@@ -58,7 +55,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Imp3Mats',
-    materialFor: ["Demon Blade", "Ultimate Dragon Blade", "Hephaestus", "Hatred", "Tiger Claw", "Demonforge Plate", "Rising Ash", "Ring of the Hell Lord", "Queen's Agony", "Heart of Behemoth", "Remorse", "Eternal Phoenix", "Esper's Blood", "Shinigami Yanki", "Dreaded Totem", "Royal Crown", "Uranus", "Scarlet Phantom", "Descend Reaper", "Helm of the Overlord", "Crystal of Eternal Flame", "Calamity", "Celestial Wand", "Everlasting Youth", "Holy Grimoire", "Link to the Past", "Prismatic Barrier", "Sovereign Sword", "Ascended Light of Destiny", "Consecration", "Eliot", "Moon Pearl", "Necrotic Sword of Doom", "Sinister Staff", "Sword of Akasha", "Titan's Mitt", "Ungodly Reaper of Nulgath"]
   },
   'Crystal of Eternal Flame': {
     id: 'Crystal of Eternal Flame',
@@ -73,7 +69,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Demonic Flame', "Imp's Tail", 'Blessing of Fire']
   },
   'Demonic Flame': {
     id: 'Demonic Flame',
@@ -87,7 +82,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Crystal of Eternal Flame',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Hellish Behemoth']
   },
   "Imp's Tail": {
     id: "Imp's Tail",
@@ -101,7 +95,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Crystal of Eternal Flame',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Hellish Behemoth']
   },
   "Blessing of Fire": {
     id: 'Blessing of Fire',
@@ -115,7 +108,6 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Crystal of Eternal Flame',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Hellish Behemoth']
   },
   "Hellish Behemoth": {
     id: 'Hellish Behemoth',
@@ -131,6 +123,5 @@ export const imp3matsItems: { [id: string]: EvoItem } = {
       'Nether Reactor',
     ],
     source: 'Imp3Mats',
-    materialFor: ['Twilight']
   },
 }

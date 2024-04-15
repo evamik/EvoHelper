@@ -71,8 +71,6 @@ export const nagaItems: { [id: string]: EvoItem } = {
       'Frostbrand may be affliated with the gauntlets, Firebrand, but whatever the truth may be, the Frostbrand is one hell of a sword.',
     effects: ['+400 Damage', 'Passive: Slows the target by 15%.'],
     source: 'Naga Ruins',
-    materialFor: ['Song of Ice']
-
   },
   'The Spirit Shroud': {
     id: 'The Spirit Shroud',
@@ -93,6 +91,5 @@ export const nagaItems: { [id: string]: EvoItem } = {
       'The tail of the ancient beast, Leviathan. Used in crafting strong weapons due to how sharp and deadly it is.',
     effects: [],
     source: 'Naga Ruins',
-    materialFor: ["Contúirteacha", "Emerald Blade", "Feral Totem", "Moonfang", "Hydra's Head", "The Executioner"]
   },
 };

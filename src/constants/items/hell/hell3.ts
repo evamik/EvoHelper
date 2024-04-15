@@ -14,7 +14,6 @@ export const hell3Items: { [id: string]: EvoItem } = {
     effects: ['+500 Agility', '+15% Attack speed'],
     source: "Death's Realm",
     sourceShort: 'h3',
-    materialFor: ['Runic Bow']
   },
   'Dusk Orb': {
     id: 'Dusk Orb',
@@ -37,7 +36,6 @@ export const hell3Items: { [id: string]: EvoItem } = {
     effects: ['+550 Intelligence', '+40 Mana Regen', '+5% Cooldown reduction'],
     source: "Death's Realm",
     sourceShort: 'h3',
-    materialFor: ['Mystral Staff']
   },
   'Scepter of Oblivion': {
     id: 'Scepter of Oblivion',
@@ -52,7 +50,6 @@ export const hell3Items: { [id: string]: EvoItem } = {
     ],
     source: "Death's Realm",
     sourceShort: 'h3',
-    materialFor: ['Deathgazer']
   },
   Soulcutter: {
     id: 'Soulcutter',
@@ -75,7 +72,6 @@ export const hell3Items: { [id: string]: EvoItem } = {
     effects: ['+7150 Health', '+25% Spell resist'],
     source: "Death's Realm",
     sourceShort: 'h3',
-    materialFor: ['Paw of Lightning']
   },
   'Time Sabres': {
     id: 'Time Sabres',
@@ -87,7 +83,6 @@ export const hell3Items: { [id: string]: EvoItem } = {
     effects: ['+2400 Damage', '+4400 Health'],
     source: "Death's Realm",
     sourceShort: 'h3',
-    materialFor: ['Blade of the Ruined King']
   },
   'Sealed Demise': {
     id: 'Sealed Demise',
@@ -99,6 +94,5 @@ export const hell3Items: { [id: string]: EvoItem } = {
     effects: [],
     source: "Death's Realm",
     sourceShort: 'h3',
-    materialFor: ["Blade of the Ruined King", "Runic Bow", "Paw of Lightning", "Windtalker", "Magic Mirror", "Tremor", "Scepter of Mastery", "Mystral Staff", "Vagabond", "Malevolent", "Ancient Dragon Book", "Blasting Rod", "Windspeaker", "Soulshot", "Legendary Dragon Orb", "Cursed Blade", "Dragonforge Plate", "Death's Head", "Death's Head", "Death's Head"]
   },
 };

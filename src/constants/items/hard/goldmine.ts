@@ -74,6 +74,5 @@ export const goldmineItems: { [id: string]: EvoItem } = {
     description: '',
     effects: ['+40 All stats'],
     source: 'Gold Mine',
-    materialFor: ['Hell Diamond']
   },
 };

@@ -14,7 +14,6 @@ export const hell4Items: { [id: string]: EvoItem } = {
     effects: ['+250 Armor'],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ['Darkforge Plate']
   },
   Doombringer: {
     id: 'Doombringer',
@@ -26,7 +25,6 @@ export const hell4Items: { [id: string]: EvoItem } = {
     effects: ['+850 Agility', '+5% Cooldown speed'],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ["Nightshadow", "Sword of the Occult"]
   },
   'Eagle Eye': {
     id: 'Eagle Eye',
@@ -38,7 +36,6 @@ export const hell4Items: { [id: string]: EvoItem } = {
     effects: ['+4000 Damage'],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ['Windforce']
   },
   'Energy Wand': {
     id: 'Energy Wand',
@@ -53,7 +50,6 @@ export const hell4Items: { [id: string]: EvoItem } = {
     ],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ["Esper's Ring"]
   },
   Hellmouth: {
     id: 'Hellmouth',
@@ -76,7 +72,6 @@ export const hell4Items: { [id: string]: EvoItem } = {
     effects: ['+500 Agility', '+25% Attack Speed'],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ['Malevolent']
   },
   'The Ark Royal': {
     id: 'The Ark Royal',
@@ -88,7 +83,6 @@ export const hell4Items: { [id: string]: EvoItem } = {
     effects: ['+4000 Damage'],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ['Blade of Despair']
   },
   "Harbinger's Essence": {
     id: "Harbinger's Essence",
@@ -100,6 +94,5 @@ export const hell4Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Tristram',
     sourceShort: 'h4',
-    materialFor: ["Crystallized Emerald Blade", "Runic Bow", "Paw of Lightning", "Windtalker", "Magic Mirror", "Tainted Neptune's Eye", "Scepter of Mastery", "Paw of Lightning", "Darkforge Plate", "Vagabond", "Destruction", "Storm Sanctuary", "Deathgazer", "Windspeaker", "Legendary Dragon Orb", "Sword of the Occult", "Concentrated Energy", "Sinister Staff"]
   },
 };

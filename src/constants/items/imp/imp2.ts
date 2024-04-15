@@ -12,7 +12,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     effects: ['+4000 Damage', '+400 Agility'],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ['Hatred']
   },
   "Blaze's Touch": {
     id: "Blaze's Touch",
@@ -26,7 +25,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     ],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ['Hephaestus']
   },
   'Dragon Steel': {
     id: 'Dragon Steel',
@@ -37,7 +35,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     effects: ['+1000 Damage', '+275 Armor'],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ["Titan's Mitt"]
   },
   "Hannah's Legend": {
     id: "Hannah's Legend",
@@ -64,7 +61,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     effects: ['+340 Armor'],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ['Helm of the Overlord']
   },
   'Wrath of the Lich King': {
     id: 'Wrath of the Lich King',
@@ -88,7 +84,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     ],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ['Demon Blade']
   },
   'The Impaler': {
     id: 'The Impaler',
@@ -104,7 +99,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     ],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ['Ultimate Dragon Blade']
   },
   'Blessing of Dragon': {
     id: 'Blessing of Dragon',
@@ -115,7 +109,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ["Draconic Trinity", "Eve", "Blessing of Fire", "Holy Grimoire", "Crisis Core"]
   },
   'Dragon Egg': {
     id: 'Dragon Egg',
@@ -126,7 +119,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ["Draconic Trinity", "Imp's Tail", "Ancient Omen"]
   },
   'Dragon Tooth': {
     id: 'Dragon Tooth',
@@ -137,7 +129,6 @@ export const imp2Items: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Dragon Fortress',
     sourceShort: 'Imp 2',
-    materialFor: ["Dragon Bow", "Draconic Trinity", "Demonic Flame", "Calamity", "Cane of Byrna", "Eliot"]
   },
   'Dragon Stone': {
     id: 'Dragon Stone',
@@ -147,6 +138,5 @@ export const imp2Items: { [id: string]: EvoItem } = {
     description: 'A stone of a mythical creature.',
     effects: [],
     source: 'Dragon Fortress',
-    materialFor: ["Ancient Omen", "Calamity", "Celestial Wand", "Everlasting Youth", "Holy Grimoire", "Link to the Past", "Prismatic Barrier", "Sovereign Sword", "Cane of Byrna", "Crisis Core", "Consecration", "Eliot", "Moon Pearl", "Sword of Akasha"]
   },
 };

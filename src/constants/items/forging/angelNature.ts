@@ -3,7 +3,7 @@ import { EvoItemRestictions } from '../../restrictions';
 import { EvoRarity } from '../../rarity';
 
 export const angelNature: { [id: string]: EvoItem } = {
-  'Deathgazer': {
+  Deathgazer: {
     id: 'Deathgazer',
     restriction: EvoItemRestictions.INT,
     rarity: EvoRarity.FORGED,
@@ -61,7 +61,6 @@ export const angelNature: { [id: string]: EvoItem } = {
     ],
     crafting: ['Crystallized Emerald Blade', 'Emerald', 'Draconic Trinity'],
     source: 'Angel of Nature',
-    materialFor: ['Scarlet Phantom']
   },
   'Eclair La Demes': {
     id: 'Eclair La Demes',
@@ -83,7 +82,6 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Nature',
-    materialFor: ['Celestial Wand']
   },
   'Dragon Totem': {
     id: 'Dragon Totem',
@@ -106,7 +104,6 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Nature',
-    materialFor: ['Dreaded Totem']
   },
   "Winter's Soul": {
     id: "Winter's Soul",
@@ -128,7 +125,6 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Nature',
-    materialFor: ['Everlasting Youth']
   },
   'Dragon Bow': {
     id: 'Dragon Bow',
@@ -148,7 +144,6 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Nature',
-    materialFor: ['Remorse']
   },
   'Claw of Midnight': {
     id: 'Claw of Midnight',
@@ -164,7 +159,6 @@ export const angelNature: { [id: string]: EvoItem } = {
     ],
     crafting: ['Paw of Lightning', 'Mystical', 'Draconic Trinity'],
     source: 'Angel of Nature',
-    materialFor: ['Tiger Claw']
   },
   Nightshadow: {
     id: 'Nightshadow',
@@ -180,7 +174,6 @@ export const angelNature: { [id: string]: EvoItem } = {
     ],
     crafting: ['Doombringer', 'Mystical', 'Draconic Trinity'],
     source: 'Angel of Nature',
-    materialFor: ['Eliot']
   },
   'Blasting Rod': {
     id: 'Blasting Rod',
@@ -201,7 +194,6 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Draconic Trinity'
     ],
     source: 'Angel of Nature',
-    materialFor: ['Descend Reaper']
   },
   Windspeaker: {
     id: 'Windspeaker',
@@ -223,7 +215,6 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Draconic Trinity',
     ],
     source: 'Angel of Nature',
-    materialFor: ['Calamity']
   },
   "Brother's Blood": {
     id: "Brother's Blood",
