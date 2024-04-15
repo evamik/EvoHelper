@@ -108,7 +108,6 @@ export const fireItems: { [id: string]: EvoItem } = {
     ],
     crafting: ['Tremor', 'Fire Stone'],
     source: 'Fire merchant',
-    materialFor: ['Ancient Omen']
   },
   'Ring of the Hell Lord': {
     id: 'Ring of the Hell Lord',
@@ -151,7 +150,6 @@ export const fireItems: { [id: string]: EvoItem } = {
     effects: ['+500 All stats', '+20% Cooldown Reduction'],
     crafting: ['Legendary Dragon Orb', 'Fire Stone'],
     source: 'Fire merchant',
-    materialFor: ['Crisis Core']
   },
   Remorse: {
     id: 'Remorse',

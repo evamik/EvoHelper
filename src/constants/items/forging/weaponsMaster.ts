@@ -25,7 +25,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Sealed Demise',
     ],
     source: 'Weapons Master',
-    materialFor: ['Cryocell']
   },
   Contúirteacha: {
     id: 'Contúirteacha',
@@ -46,7 +45,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Black Soul',
     ],
     source: 'Weapons Master',
-    materialFor: ['Windtalker']
   },
   'Emerald Blade': {
     id: 'Emerald Blade',
@@ -70,7 +68,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       "Hydra's Bane",
     ],
     source: 'Weapons Master',
-    materialFor: ['Crystallized Emerald Blade']
   },
   'Crystallized Emerald Blade': {
     id: 'Crystallized Emerald Blade',
@@ -94,7 +91,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       "Harbinger's Essence",
     ],
     source: 'Weapons Master',
-    materialFor: ['Final Emerald Blade']
   },
   'Feral Totem': {
     id: 'Feral Totem',
@@ -111,7 +107,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       "Hydra's Bane",
     ],
     source: 'Weapons Master',
-    materialFor: ['Paw of Lightning']
   },
   'Hand of God': {
     id: 'Hand of God',
@@ -145,7 +140,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Cursed Artifact',
     ],
     source: 'Weapons Master',
-    materialFor: ['Cursed Blade']
   },
   'Runic Bow': {
     id: 'Runic Bow',
@@ -164,7 +158,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Golden Fragment',
     ],
     source: 'Weapons Master',
-    materialFor: ['Windspeaker']
   },
   'The Executioner': {
     id: 'The Executioner',
@@ -178,8 +171,8 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Rare Weapon Piece',
       'Rare Handle Piece',
       'Quicksilver Fragment',
-      "Silver",
-      "Hydra's Bane"
+      'Silver',
+      "Hydra's Bane",
     ],
     source: 'Weapons Master',
   },
@@ -203,7 +196,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Cursed Artifact',
     ],
     source: 'Weapons Master',
-    materialFor: ['']
   },
   Windforce: {
     id: 'Windforce',
@@ -224,7 +216,6 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Diamond',
     ],
     source: 'Weapons Master',
-    materialFor: ['Dragon Bow']
   },
   'Paw of Lightning': {
     id: 'Paw of Lightning',
@@ -246,6 +237,5 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       "Harbinger's Essence",
     ],
     source: 'Weapons Master',
-    materialFor: ["Claw of Midnight"]
   },
 };

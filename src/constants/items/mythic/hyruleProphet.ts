@@ -21,7 +21,6 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
       'Pure Light Synthesis',
     ],
     source: 'Cursed Heaven',
-    materialFor: ["Ancient Omen", "Calamity", "Celestial Wand", "Everlasting Youth", "Holy Grimoire", "Link to the Past", "Prismatic Barrier", "Sovereign Sword", "Ascended Light of Destiny", "Cane of Byrna", "Crisis Core", "Consecration", "Drakath's Armor", "Eliot", "Moon Pearl", "Necrotic Sword of Doom", "Sinister Staff", "Sword of Akasha", "Titan's Mitt", "Ungodly Reaper of Nulgath"]
   },
   'Angelic Heart': {
     id: 'Angelic Heart',
@@ -32,7 +31,6 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
       "The heart of divine.",
     effects: [],
     source: 'Cursed Heaven',
-    materialFor: ['Angelic Hope']
   },
   "Harbinger's Heart": {
     id: "Harbinger's Heart",
@@ -43,6 +41,5 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
       "The pure essence of Harbinger, his heart itself.",
     effects: [],
     source: 'Cursed Heaven',
-    materialFor: ['"Prismatic Barrier", "Crisis Core", "Moon Pearl", "Necrotic Sword of Doom"']
   },
 }

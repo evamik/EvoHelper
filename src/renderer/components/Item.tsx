@@ -9,7 +9,6 @@ import { grey, lightBlue } from '@mui/material/colors';
 import { evoItemRestrictions } from '../../constants/restrictions';
 import { evoItems } from '../../constants/items';
 import Avatar from '@mui/material/Avatar';
-import { EvoItemRenderer } from './ItemWithTooltip';
 
 interface EvoItemProps extends BoxProps {
   item: EvoItem
@@ -40,7 +39,6 @@ export function EvoItem(props: EvoItemProps) {
         </Typography>
       ))}
       <ItemDependenciesTree item={item} />
-      <ItemDependants item={item} />
     </Box>
   )
 }
@@ -58,24 +56,6 @@ function ItemDependenciesTree(props: {item: EvoItem}) {
           ))
         }
       </TreeView>
-    </Box>
-  )
-}
-
-function ItemDependants(props: {item: EvoItem}) {
-  const { item } = props;
-  if (!item.materialFor || item.materialFor.length === 0) return null;
-  return (    
-    <Box sx={{ width: '500px', paddingTop: '15px'}}>
-      <Typography variant="h6">Material for</Typography>
-        
-      <Box sx={{ width: '500px', paddingTop: '15px'}}>
-          {
-            item.materialFor?.map((materialId: string) => (
-                <EvoItemRenderer key={materialId} id={materialId}/>
-            ))
-          }
-      </Box>
     </Box>
   )
 }
@@ -103,7 +83,7 @@ function ItemDependency(props: {id: string; index: string;}) {
       label={
         <Box sx={{display:'flex', flexDirection:'row', alingItems: 'center', justifyContent: 'space-between'}}>
           <ItemIconAndTitle item={item} />
-          { (item.sourceShort || item.source) && <Typography variant="body2" sx={{ color: lightBlue[300] }}>{item.sourceShort ?? item.source}</Typography> }
+          { item.sourceShort && <Typography variant="body2" sx={{ color: lightBlue[300] }}>{item.sourceShort}</Typography> }
         </Box>
       }>
       {
@@ -115,11 +95,11 @@ function ItemDependency(props: {id: string; index: string;}) {
   )
 }
 
-export function ItemIconAndTitle (props: {item: EvoItem, onClick?: () => void}) {
-  const { item, onClick } = props;
+export function ItemIconAndTitle (props: {item: EvoItem}) {
+  const { item } = props;
   return (
     <Box sx={{display:'flex', flexDirection:'row', alingItems: 'center'}}>
-      <Avatar sx={{ cursor: 'pointer', bgcolor: grey[500], marginRight: '10px' }} variant="rounded" src={iconFromId(item.icon)} onClick={onClick}/>
+      <Avatar sx={{ bgcolor: grey[500], marginRight: '10px' }} variant="rounded" src={iconFromId(item.icon)}/>
       <Typography variant="body2" sx={{ color: evoRarity[item.rarity] }}>{item.id}</Typography>
     </Box>
   )

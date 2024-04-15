@@ -42,9 +42,9 @@ export function ItemsPage() {
         debounceTimeout={500}
         handleDebounce={(value: string) => setFilter(value)}
       />
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', columnGap: 2, paddingTop: '20px' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
         {filteredItems.map((id) => (
-          <EvoItemRenderer key={id} id={id} border={true} />
+          <EvoItemRenderer key={id} id={id} />
         ))}
       </Box>
     </Box>
