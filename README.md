@@ -7,11 +7,14 @@ Set your wc3 path and battle tag, then hit 'Refresh' button to load your classes
 Current hotkey: ``A`` This will be configurable in the future.
 
 ## Starting Development 
-
+If you want to contribute and not sure what to do (or have an idea of a change/feature) feel free to DM, or open an issue.
 Start the app in the `dev` environment:
-
+Node version: 14.17.0
 ```bash
-npm start
+yarn install --frozen-lockfile
+```
+```bash
+yarn start
 ```
 
 ## Packaging for Production
@@ -19,9 +22,9 @@ npm start
 To package apps for the local platform:
 
 ```bash
-npm run package
+yarn package
 ```
 
 ## Credits
 
-This whole thing is built upon [Electron React Boilerplate](https://electron-react-boilerplate.js.org/)
+This whole app is built upon [Electron React Boilerplate](https://electron-react-boilerplate.js.org/)

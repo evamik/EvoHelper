@@ -26,7 +26,7 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
     rarity: EvoRarity.MYTHIC,
     icon: 'AngelicHeart',
     description:
-      "The heart of divine. Requires 12 Mysterious Notes.",
+      "The heart of divine.",
     effects: [],
     crafting: [
       'Angel Creation',
@@ -52,7 +52,7 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
     ],
     source: 'Hyrule Prophet',
   },
-  "Disenchant Triforce Relics": {
+  /*"Disenchant Triforce Relics": {
     id: "Disenchant Triforce Relics",
     restriction: EvoItemRestictions.FORGING_MATERIAL,
     rarity: EvoRarity.MYTHIC,
@@ -60,7 +60,7 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
     description:
       "Disenchants your ancient Triforce Relics in your Hero's First Inventory Slot into:",
     effects: [],
-    crafting: [
+   crafting: [
       'Unpurified Triforce Fragment = 3 Cursed Heaven Prestige',
       'Unpurified Triforce Shard = 6 Cursed Heaven Prestige',
       'Triforce Shard = 6 Cursed Heaven Prestige + Light Synthesis',
@@ -69,7 +69,7 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
       'Triforce = 36 Cursed Heaven Prestige + 3 Pure Light Synthesis',
     ],
     source: 'Hyrule Prophet',
-  },
+  }, */
   "Pure Light Synthesis": {
     id: "Pure Light Synthesis",
     restriction: EvoItemRestictions.FORGING_MATERIAL,

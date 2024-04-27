@@ -38,9 +38,9 @@ export const cursedHeavenItems: { [id: string]: EvoItem } = {
     description:
       'The origins of the Cane of Somaria are unknown. It is rumored to have been carried by a Hero during the Battle of a Thousand Heroes and later discovered by the vampires of Redwater Den. ',
     effects: [
-      '+1250 Intelligence',
-      '+12% Cooldown Reduction',
-      'Passive: Increase Magic Damage dealt to bosses by 15%',
+      '+1300 Intelligence',
+      '+10% Cooldown Reduction',
+      'Passive: Increase Magic Damage dealt to bosses by 12%',
     ],
     source: 'Cursed Heaven',
     sourceShort: 'M1',
@@ -127,5 +127,14 @@ export const cursedHeavenItems: { [id: string]: EvoItem } = {
     effects: [],
     source: 'Cursed Heaven',
     sourceShort: 'M1',
+  },
+  'Angel Gem': {
+    id: 'Angel Gem',
+    restriction: EvoItemRestictions.FORGING_MATERIAL,
+    rarity: EvoRarity.GODLY,
+    icon: 'AngelGem',
+    description: 'The gem of an angel.',
+    effects: [],
+    source: 'Cursed Heaven',
   },
 };

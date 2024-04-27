@@ -33,7 +33,7 @@ export const hell4Items: { [id: string]: EvoItem } = {
     icon: 'BTNINV_Weapon_Bow_09',
     description:
       'During the First Great War, the Sephax crafted this bow for their best marksman, with the intention of striking down their enemies with it. However, the bow, too fast for its own good, struck down the wielder and the Sephax themselves, wiping them out. How ironic - they created it to defeat their enemies, but got defeated instead.',
-    effects: ['+4200 Damage'],
+    effects: ['+4000 Damage'],
     source: 'Tristram',
     sourceShort: 'h4',
   },

@@ -15,7 +15,7 @@ import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 import { loadTevefData } from './load';
 import { executeCommand } from './dirt/keyboard';
-import { armFishing, disarmFishing } from './fishing';
+import { armFishing, stopFishingAndUnregisterHotkeys } from './fishing';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -26,7 +26,7 @@ ipcMain.on('ipc', async (event, arg) => {
 
 ipcMain.on('load', async (event, arg) => {
   // clear previous hotkey forcefully
-  globalShortcut.unregister('A');
+  globalShortcut.unregister('A');11
   globalShortcut.register('A', async () => {
     globalShortcut.unregister('A');
     // eslint-disable-next-line no-restricted-syntax
@@ -38,10 +38,10 @@ ipcMain.on('load', async (event, arg) => {
 });
 
 ipcMain.on('fishing_arm', async (event, arg) => {
-  armFishing(arg);
+  armFishing(arg.hotkey, arg.up, arg.down, arg.delay);
 });
 ipcMain.on('fishing_disarm', async (event, arg) => {
-  disarmFishing();
+  stopFishingAndUnregisterHotkeys();
 });
 
 ipcMain.on('settings_read', async (event) => {
