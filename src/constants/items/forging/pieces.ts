@@ -123,4 +123,14 @@ export const pieces: { [id: string]: EvoItem } = {
     crafting: [],
     source: 'Blacksmith',
   },
+  'Fabled Armor Piece': {
+    id: 'Fabled Armor Piece',
+    restriction: EvoItemRestictions.FORGE,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'ArmorPiece',
+    description: '',
+    effects: [],
+    crafting: [],
+    source: 'Blacksmith',
+  }
 };
