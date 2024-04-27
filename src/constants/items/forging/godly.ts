@@ -77,8 +77,9 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
       'Named after Fate Testarossa, also known as Fate T. Harlaown, this powerful energy blade is her Bardiche Assault in Zanber Form.',
     effects: [
       '+10 000 Damage',
+      '+30 000 Mana',
       '+1500 Main stat',
-      '+20% Cooldown Reduction',
+      '+10% Cooldown Reduction',
       'Passive:  Basic attack(DAT)/spellcast(GT) deals (60,000 + 300% Main Stat) Pure Damage in a huge line. Cooldown 4s.',
     ],
     crafting: ['Twilight', 'Eve'],

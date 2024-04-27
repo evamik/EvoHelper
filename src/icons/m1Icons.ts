@@ -8,6 +8,7 @@ import MirrorShield from './png/evo/m1/BTN_MirrorShield.png';
 import AngelCreation from './png/evo/m1/BTNMoonStone.png';
 import AngelFeather from './png/evo/m1/BTNPiercingFeathernew.png';
 import AngelFire from './png/evo/m1/BTNGlyph.png';
+import AngelGem from './png/evo/m1/AngelGem.png';
 
 export const m1Icons = {
   Angelslayer,
@@ -20,4 +21,5 @@ export const m1Icons = {
   AngelCreation,
   AngelFeather,
   AngelFire,
+  AngelGem,
 };

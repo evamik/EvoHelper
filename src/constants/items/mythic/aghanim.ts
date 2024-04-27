@@ -1,6 +1,7 @@
 import { EvoItem } from '../item';
 import { EvoItemRestictions } from '../../restrictions';
 import { EvoRarity } from '../../rarity';
+import HolyBible from '../../../icons/png/evo/aghanim/HolyBible.png';
 
 export const aghanimItems: { [id: string]: EvoItem } = {
   'Ancient Omen': {
@@ -68,18 +69,39 @@ export const aghanimItems: { [id: string]: EvoItem } = {
     ],
     source: 'Aghanim',
   },
-  'Everlasting Youth': {
-    id: 'Everlasting Youth',
+  'Holy Bible': {
+    id: 'Holy Bible',
+    restriction: EvoItemRestictions.DRUID,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'HolyBible',
+    description: 'Contains the new testament written by the Messiah. It is said that chanting the right words allows you to summon the chosen one.',
+    effects: [
+      '+650 All stats',
+      '+15% Cooldown speed',
+      'Active: Summons an Angel for 50s. Cooldown 60s.'
+    ],
+    crafting: [
+      'Ancient Dragon Book',
+      'Golden Fragment',
+      'Blessing of Dragon',
+      'Dragon Egg',
+      'Fire Stone',
+      'Angelic Hope',
+    ],
+    source: 'Aghanim',
+  },
+  "Seraph's Embrace": {
+    id: 'Seraph\'s Embrace',
     restriction: EvoItemRestictions.INT,
     rarity: EvoRarity.MYTHIC,
     icon: 'EverlastingYouth',
-    description: 'Coveted by the High Wizard Council as the pendant that saved magic from the Great Drought, this historical artifact preserves its magical touch from several millennia ago.',
+    description: '',
     effects: [
       '+1200 Intelligence',
       '+120 Mana Regeneration',
-      '0.4% Max Mana regen per second',
+      '0.5% Max Mana regen per second',
       '+15% Cooldown Reduction',
-      'Passive: Restore 20% Max MP over 5 seconds when MP reaches below 20%. Cooldown 60s.'
+      'Passive: Restore 20% Max MP over 5 seconds when MP reaches below 20%. Cooldown 40s.'
     ],
     crafting: [
       'Winter\'s Soul',
@@ -114,8 +136,8 @@ export const aghanimItems: { [id: string]: EvoItem } = {
     ],
     source: 'Aghanim',
   },
-  'Link to the Past': {
-    id: 'Link to the Past',
+  'Hyrulean Tome of Wisdom': {
+    id: 'Hyrulean Tome of Wisdom',
     restriction: EvoItemRestictions.HIGH_TEMPLAR,
     rarity: EvoRarity.MYTHIC,
     icon: 'LinkToThePast',
