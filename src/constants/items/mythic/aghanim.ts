@@ -201,4 +201,67 @@ export const aghanimItems: { [id: string]: EvoItem } = {
     ],
     source: 'Aghanim',
   },
+  'The Vanquisher': {
+    id: 'The Vanquisher',
+    restriction: EvoItemRestictions.MELEE_AGI,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'Vanquisher',
+    description: "A sword that resonates with the echoes of countless victories. Its blade, gleaming with an ethereal light, tells the tale of adversaries laid low and challenges overcome. The hilt, adorned with symbols of valor, serves as a constant reminder of the indomitable spirit of those who wield it. As a weapon steeped in the legacy of champions, it is a testament to the unwavering resolve of those who dare to face adversity and emerge victorious.",
+    effects: [
+      '+1500 Agility',
+      '+15% Cooldown Speed',
+      'Passive: Spellcasts increase next 3 basic attacks to deal 160% damage.'
+    ],
+    crafting: [
+      'Sword of the Occult',
+      'Mythical Weapon Piece',
+      'Dragon Stone',
+      'Fire Rising',
+      'Fire Stone',
+      'Angelic Hope'
+    ],
+    source: 'Aghanim',
+  },
+  'Valhalla': {
+    id: 'Valhalla',
+    restriction: EvoItemRestictions.MELEE,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'Valhalla',
+    description: 'Forged in the divine fires of the mythical Valkyr Smithy, the Valhalla Blade is said to be a gift from the gods themselves to the champions destined for the grand feasts of Valhalla.',
+    effects: [
+      '+8000 Damage',
+      'Passive: Gains 100% Bonus Damage and 25% Bonus AS for 3 seconds after attacking enemy with below 30% HP'
+    ],
+    crafting: [
+      'Blade of Despair',
+      'Mythical Weapon Piece',
+      'Mythical Handle Piece',
+      'Dragon Stone',
+      'Fire Stone',
+      'Angelic Hope'
+    ],
+    source: 'Aghanim',
+  },
+  'Oracle': {
+    id: 'Oracle',
+    restriction: EvoItemRestictions.AC_CA_FA,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'Oracle',
+    description: 'Crafted by the enigmatic healers of the Sanctuary of Renewal, Oracle\'s Embrace is a testament to their unwavering commitment to healing arts. The cloak draws upon the primal energies of life, offering a haven for those who seek refuge and recovery.',
+    effects: [
+      '+1200 Intelligence',
+      '+160 Mana Regeneration',
+      '+15% Cooldown Speed',
+      'Active: Grants 30% Heal Power for 10 seconds. Cooldown 25s.'
+    ],
+    crafting: [
+      'Flask of Oasis',
+      'Nature Fragment',
+      'Mythical Armor Piece',
+      'Blessing of Dragon',
+      'Fire Stone',
+      'Angelic Hope'
+    ],
+    source: 'Aghanim',
+  },
 }
