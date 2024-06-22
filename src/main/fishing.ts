@@ -1,5 +1,6 @@
 import { globalShortcut } from 'electron';
 import { keyboard, Key, screen, Point} from '@nut-tree/nut-js';
+import { type } from 'node:os';
 
 interface ColorCoordinateObj {
   R: number;
@@ -10,6 +11,7 @@ interface ColorCoordinateObj {
 }
 
 const FISHING_ROD_CLICK_INTERVAL = 1000 * 5;
+const COLOR_MARGIN = 10;
 
 let scanInterval: ReturnType<typeof setInterval> | undefined
 let startInterval: ReturnType<typeof setInterval> | undefined
@@ -18,7 +20,7 @@ const click = async (button: Key) => {
   await keyboard.releaseKey(button);
 }
 const closeEnough = (a: number, b: number) => {
-  return Math.abs(a-b) < 10;
+  return Math.abs(a-b) < COLOR_MARGIN;
 }
 
 const fishingScanInterval = (delay: number, up: ColorCoordinateObj, down: ColorCoordinateObj) => {
@@ -38,7 +40,6 @@ const fishingScanInterval = (delay: number, up: ColorCoordinateObj, down: ColorC
 export function stopFishingAndUnregisterHotkeys() {
   globalShortcut.unregister('CommandOrControl+9');
   globalShortcut.unregister('CommandOrControl+-');
-  globalShortcut.unregister('CommandOrControl+=');
   try {
     //@ts-ignore
     clearInterval(scanInterval);
@@ -56,7 +57,7 @@ export function armFishing(rodHotkey: any, up: ColorCoordinateObj, down: ColorCo
     if(!scanInterval && !startInterval) {
       click(rodHotkey);
       startInterval = setInterval(() => {
-        click(rodHotkey)
+        click(rodHotkey);
       }, FISHING_ROD_CLICK_INTERVAL);
       scanInterval = fishingScanInterval(delay, up, down);
     }

@@ -40,6 +40,7 @@ import { EvoItemRestictions } from '../restrictions';
 import { EvoRarity } from '../rarity';
 import { EvoItem } from './item';
 import { hyruleProphetItems } from './mythic/hyruleProphet';
+import { chiralValleyItems } from './mythic/chiralValley';
 
 export const evoItems: {[id: string]: EvoItem} = {
   ...fishingItems,
@@ -80,6 +81,7 @@ export const evoItems: {[id: string]: EvoItem} = {
   ...imp2Items,
   ...imp3Items,
   ...cursedHeavenItems,
+  ...chiralValleyItems,
   ...imp3matsItems,
   ...headItems,
   ...agonyItems,

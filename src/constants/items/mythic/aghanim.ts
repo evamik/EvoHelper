@@ -1,7 +1,6 @@
 import { EvoItem } from '../item';
 import { EvoItemRestictions } from '../../restrictions';
 import { EvoRarity } from '../../rarity';
-import HolyBible from '../../../icons/png/evo/aghanim/HolyBible.png';
 
 export const aghanimItems: { [id: string]: EvoItem } = {
   'Ancient Omen': {
@@ -91,10 +90,10 @@ export const aghanimItems: { [id: string]: EvoItem } = {
     source: 'Aghanim',
   },
   "Seraph's Embrace": {
-    id: 'Seraph\'s Embrace',
+    id: "Seraph's Embrace",
     restriction: EvoItemRestictions.INT,
     rarity: EvoRarity.MYTHIC,
-    icon: 'EverlastingYouth',
+    icon: 'SeraphsEmbrace',
     description: '',
     effects: [
       '+1200 Intelligence',

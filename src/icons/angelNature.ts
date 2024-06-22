@@ -9,6 +9,8 @@ import ClawOfMidnight from './png/evo/angelNature/ClawOfMidninght.png';
 import Nightshadow from './png/evo/angelNature/Nightshadow.png';
 import BlastingRod from './png/evo/angelNature/BlastingRod.png';
 import Windspeaker from './png/evo/angelNature/Windspeaker.png';
+import FlaskOfTheOasis from './png/evo/angelNature/FlaskOfTheOasis.png';
+import BrothersBlood from './png/evo/angelNature/BrothersBlood.png';
 
 export const angelNatureIcons = {
   Deathgazer,
@@ -22,4 +24,6 @@ export const angelNatureIcons = {
   Nightshadow,
   BlastingRod,
   Windspeaker,
+  FlaskOfTheOasis,
+  BrothersBlood,
 };

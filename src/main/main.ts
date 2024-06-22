@@ -16,6 +16,8 @@ import { resolveHtmlPath } from './util';
 import { loadTevefData } from './load';
 import { executeCommand } from './dirt/keyboard';
 import { armFishing, stopFishingAndUnregisterHotkeys } from './fishing';
+import { parseLastRun } from './lastrun';
+import { Key } from '@nut-tree/nut-js';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -26,7 +28,7 @@ ipcMain.on('ipc', async (event, arg) => {
 
 ipcMain.on('load', async (event, arg) => {
   // clear previous hotkey forcefully
-  globalShortcut.unregister('A');11
+  globalShortcut.unregister('A');
   globalShortcut.register('A', async () => {
     globalShortcut.unregister('A');
     // eslint-disable-next-line no-restricted-syntax
@@ -64,6 +66,10 @@ ipcMain.on('settings_read', async (event) => {
     });
     return;
   }
+});
+
+ipcMain.on('request_last_run', async (event, arg) => {
+  parseLastRun(arg);
 });
 
 ipcMain.on('settings_write', async (event, arg) => {

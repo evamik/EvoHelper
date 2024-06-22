@@ -152,19 +152,8 @@ import BTNBookOfAncientKnowledge from './png/evo/BTNBookOfAncientKnowledge.png';
 import BTNWindGlove from './png/evo/BTNWindGlove.png';
 import BTNMagicMirror from './png/evo/BTNMagicMirror.png';
 import BTNEyeOfDalaran from './png/evo/BTNEyeOfDalaran.png';
-
-import BTNAAA_BotRK from './png/evo/BTNAAA_BotRK.png';
-import BTNGlovesOfTheDeathLord from './png/evo/BTNGlovesOfTheDeathLord.png';
-import BTN_BladeG from './png/evo/BTN_BladeG.png';
-import BTNEmbarBlade from './png/evo/BTNEmbarBlade.png';
-import BTNStrengthOfTheWild from './png/wc3/BTNStrengthOfTheWild.png';
-import BTNSpell_Holy_Devotion from './png/evo/BTNSpell_Holy_Devotion.png';
-import BTNSoulBlades from './png/evo/BTNSoulBlades.png';
-import BTNRunestoneLongbow from './png/evo/BTNRunestoneLongbow.png';
-import BTNINV_Weapon_Halberd_11 from './png/evo/BTNINV_Weapon_Halberd_11.png';
-import BTNBladeoftheFrostWarrior from './png/evo/BTNBladeoftheFrostWarrior.png';
-import BTNINV_Weapon_Bow_06 from './png/evo/BTNINV_Weapon_Bow_06.png';
 import BTNAdvancedStrengthOfTheWild from './png/wc3/BTNAdvancedStrengthOfTheWild.png';
+import BTNStrengthOfTheWild from './png/wc3/BTNStrengthOfTheWild.png';
 
 import BTNBlackPlague from './png/evo/BTNBlackPlague.png';
 import BTNINV_Jewelry_Ring_05 from './png/evo/BTNINV_Jewelry_Ring_05.png';
@@ -197,6 +186,8 @@ import { agonyIcons } from './agony';
 import { aghanimIcons } from './aghanim';
 import { m1CraftIcons } from './m1Craft';
 import { hyruleProphetIcons } from './hyruleProphetIcons';
+import { weaponMasterIcons } from './weaponMaster';
+import { m2Icons } from './m2Icons';
 
 const icons = {
   EmptySlotIcon,
@@ -310,7 +301,6 @@ const icons = {
 
   BTNINV_Weapon_Bow_09,
   BTNINV_Wand_08,
-  BTNAAA_BotRK,
   BTNAAA_PhantomDancer,
   BTNSoulSword,
   BTNEssenceDrain4,
@@ -341,16 +331,6 @@ const icons = {
   BTNTimeSabres,
   BTNFrozenDeath,
 
-  BTNGlovesOfTheDeathLord,
-  BTN_BladeG,
-  BTNEmbarBlade,
-  BTNSpell_Holy_Devotion,
-  BTNSoulBlades,
-  BTNRunestoneLongbow,
-  BTNINV_Weapon_Halberd_11,
-  BTNBladeoftheFrostWarrior,
-  BTNINV_Weapon_Bow_06,
-
   BTNBlackPlague,
   BTNINV_Jewelry_Ring_05,
   BTNBlackArmor,
@@ -380,10 +360,12 @@ const icons = {
   ...fragmentedSoulIcons,
   ...ancientSoulIcons,
   ...banditLordIcons,
+  ...weaponMasterIcons,
 
   ...mysteryIcons,
   ...godlyIcons,
   ...m1Icons,
+  ...m2Icons,
   ...angelNatureIcons,
   ...angelSunIcons,
   ...angelFireIcons,

@@ -1,7 +1,7 @@
 import AncientOmen from "./png/evo/aghanim/AncientOmen.png";
 import Calamity from "./png/evo/aghanim/Calamity.png";
 import CelestialWand from "./png/evo/aghanim/CelestialWand.png";
-import EverlastingYouth from "./png/evo/aghanim/EverlastingYouth.png";
+import SeraphsEmbrace from "./png/evo/aghanim/SeraphsEmbrace.png";
 import HolyGrimore from "./png/evo/aghanim/HolyGrimore.png";
 import HolyBible from "./png/evo/aghanim/HolyBible.png";
 import LinkToThePast from "./png/evo/aghanim/LinkToThePast.png";
@@ -15,7 +15,7 @@ export const aghanimIcons = {
   AncientOmen,
   Calamity,
   CelestialWand,
-  EverlastingYouth,
+  SeraphsEmbrace,
   HolyBible,
   HolyGrimore,
   LinkToThePast,
