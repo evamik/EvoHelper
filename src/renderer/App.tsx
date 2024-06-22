@@ -15,9 +15,11 @@ import { ItemsPage } from './pages/ItemsPage';
 import { LoaderPage } from './pages/LoaderPage';
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
+import { useSettingsContext } from '../settingsContext';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
+  const { wc3path } = useSettingsContext();
 
   return (
     <Router initialEntries={['/settings']}>
@@ -59,6 +61,9 @@ export default function App() {
                 </MenuItem>
                 <MenuItem component={Link} to="/fishing">
                   Fishing
+                </MenuItem>
+                <MenuItem onClick={() => window.electron.ipcRenderer.sendMessage('request_last_run', wc3path)}>
+                  Copy last run info
                 </MenuItem>
               </MenuList>
             </Box>

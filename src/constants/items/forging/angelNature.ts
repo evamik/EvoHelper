@@ -216,4 +216,47 @@ export const angelNature: { [id: string]: EvoItem } = {
     ],
     source: 'Angel of Nature',
   },
+  "Brother's Blood": {
+    id: "Brother's Blood",
+    restriction: EvoItemRestictions.MELEE,
+    rarity: EvoRarity.FORGED,
+    icon: 'BrothersBlood',
+    description: 'Forged in the crucible of familial bonds and steeped in the echoes of loyalty and strife, Brother\'s Blood is a weapon with a tragic history. Crafted from the strongest alloys and enchanted with the essence of shared lineage, this blade carries the weight of both unity and conflict. Its hilt, adorned with symbols of kinship, tells a story of bonds tested and strengthened, making it a formidable weapon in the hands of those who understand the price of brotherhood.',
+    effects: [
+      '+1000 Damage',
+      '+500 All stats',
+      'Active: Consume 10% HP and take 5000 Magic damage per second to gain 50% AS for 10s. Cooldown 9s.',
+    ],
+    crafting: [
+      'Tomahawk Axe',
+      'Blood Fragment',
+      'Ruby',
+      'Mythical Weapon Piece',
+      'Mythical Handle Piece',
+      'Draconic Trinity',
+    ],
+    source: 'Angel of Nature',
+  },
+  'Flask of the Oasis': {
+    id: 'Flask of the Oasis',
+    restriction: EvoItemRestictions.ACOLYTE,
+    rarity: EvoRarity.FORGED,
+    icon: 'FlaskOfTheOasis',
+    description: 'A crystalline vessel holding the essence of life itself, the Flask of the Oasis is a potent elixir that quenches both thirst and weariness. Sipped from this enchanted flask, adventures experience an immediate surge of revitalizing energy, as if drawing sustenance from a hidden oasis in the desert.',
+    effects: [
+      '+900 Intelligence',
+      '+120 MP Regen',
+      '+10% Cooldown speed',
+      'Active: Grants 25% Heal power for 10s. Cooldown 25s'
+    ],
+    crafting: [
+      "Winter's Heart",
+      'Nature Fragment',
+      'Emerald',
+      'Diamond',
+      'Dragon Egg',
+      'Draconic Trinity',
+    ],
+    source: 'Angel of Nature',
+  },
 };

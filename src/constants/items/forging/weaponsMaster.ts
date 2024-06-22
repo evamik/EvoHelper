@@ -1,6 +1,7 @@
 import { EvoItemRestictions } from '../../restrictions';
 import { EvoRarity } from '../../rarity';
 import { EvoItem } from '../item';
+import TomahawkAxe from '../../../icons/png/evo/weaponMaster/TomahawkAxe.png';
 
 export const weaponsMasterItems: { [id: string]: EvoItem } = {
   // Weapons Master
@@ -50,7 +51,7 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
     id: 'Emerald Blade',
     restriction: EvoItemRestictions.ALL_CLASSES,
     rarity: EvoRarity.FORGED,
-    icon: 'BTN_BladeG',
+    icon: 'EmeraldBlade',
     description:
       'A sword crafted with pure emerald. Its shiny edge can slice through enemies at will. It is said that the wielder becomes greedy, going into a state of frenzy at some time.',
     effects: [
@@ -171,7 +172,9 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Rare Weapon Piece',
       'Rare Handle Piece',
       'Quicksilver Fragment',
-      "Silver + Hydra's Bane",
+      "Silver",
+      "Hydra's Bane",
+
     ],
     source: 'Weapons Master',
   },
@@ -234,6 +237,28 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Ultra Handle Piece',
       'Sealed Demise',
       "Harbinger's Essence",
+    ],
+    source: 'Weapons Master',
+  },
+  'Tomahawk Axe': {
+    id: 'Tomahawk Axe',
+    restriction: EvoItemRestictions.MELEE,
+    rarity: EvoRarity.FORGED,
+    icon: 'TomahawkAxe',
+    description:
+      'Forged in the heart of the untamed mountains, the Ogre Tomahawk is a weapon that reflects the raw, brutal strength of the ogre tribes. Hewn from the densest ironwood and adorned with crude, tribal markings, this imposing tomahawk embodies the essence of primal ferocity. The weapon\'s hefty weight and razor-sharp edge make it a devastating choice for those who seek to unleash the unbridled power of the wind. With each swing, the Ogre Tomahawk echoes the ancestral roars of the mountain clans, leaving no doubt about its wielder\'s affiliation with the untamed forces of nature.',
+    effects: [
+      '+1800 Damage',
+      '+375 Strength',
+      '+375 Agility',
+    ],
+    crafting: [
+      'The Executioner',
+      'Ultra Weapon Piece',
+      'Ultra Handle Piece',
+      'Sealed Demise',
+      "Harbinger's Essence",
+      'Diamond',
     ],
     source: 'Weapons Master',
   },
