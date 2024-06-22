@@ -55,10 +55,9 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
     description:
       'A sword crafted with pure emerald. Its shiny edge can slice through enemies at will. It is said that the wielder becomes greedy, going into a state of frenzy at some time.',
     effects: [
-      '+1100 Damage',
-      '+60 Armor',
-      '+3000 Health',
-      'Active: +30% AS for 10 seconds. Cooldown 35s.',
+      '+1400 Damage',
+      '+125 All stats',
+      'Active: +30% AS for 10 seconds. Cooldown 25s.',
     ],
     crafting: [
       'Ultra Weapon Piece',
@@ -79,9 +78,8 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'A sword crafted with pure emerald in its purest form. Its shiny edge can slice through enemies at will. It is said that the wielder becomes greedy, going into a state of frenzy at some time.',
     effects: [
       '+2000 Damage',
-      '+125 Armor',
-      '+4400 Health',
-      'Active: +45% AS for 10 seconds. Cooldown 30s.',
+      '+250 All stats',
+      'Active: +45% AS for 10 seconds. Cooldown 25s.',
     ],
     crafting: [
       'Emerald Blade',
