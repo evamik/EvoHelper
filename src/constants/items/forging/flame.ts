@@ -136,9 +136,8 @@ export const flameItems: { [id: string]: EvoItem } = {
     description:
       'The fully manifested gemstone sword, also known as the Ruby Blade by coating the emerald with a more powerful gemstone..',
     effects: [
-      '+2800 Damage',
-      '+175 Armor',
-      '+6 600 Health',
+      '+3500 Damage',
+      '+350 All stats',
       'Active: Gains 75% AS for 10 seconds. Cooldown 25s.',
     ],
     crafting: ['Final Emerald Blade', 'Ruby', 'Fire Stone'],
