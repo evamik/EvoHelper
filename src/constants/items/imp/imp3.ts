@@ -29,6 +29,17 @@ export const imp3Items: { [id: string]: EvoItem } = {
     source: 'Punishment Chamber',
     sourceShort: 'Imp 3',
   },
+  'Demon Bow': {
+    id: 'Demon Bow',
+    restriction: EvoItemRestictions.ARCHER,
+    rarity: EvoRarity.LEGENDARY,
+    icon: 'DevilBowIcon',
+    description:
+      'Crafted by the demons of hell, this hellish relic is used by Satanic Archers to protect the Gate of Hell.',
+    effects: ['+5200 Damage', '+20% BD'],
+    source: 'Punishment Chamber',
+    sourceShort: 'Imp 3',
+  },
   'Reaper Armor': {
     id: 'Reaper Armor',
     restriction: EvoItemRestictions.MELEE,
