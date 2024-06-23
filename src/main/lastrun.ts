@@ -23,9 +23,9 @@ export const parseLastRun = async (path: string) => {
   const data = extractDropDetails(classFile.slice(titleEndIndex));
 
   await clipboard.setContent(
-    `> ${title}\n` +
+    `> **${title}**\n` +
     data
-      .map((el) => `**${el.shift()} ${el.shift()}:** ${el.join(',')}`)
+      .map((el) => `${el.shift()} - ${el.shift()}: ${el.join(',')}`)
       .join('\n')
   );
 }
