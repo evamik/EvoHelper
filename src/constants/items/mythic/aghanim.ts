@@ -135,6 +135,30 @@ export const aghanimItems: { [id: string]: EvoItem } = {
     ],
     source: 'Aghanim',
   },
+  'Sacred Grimoire': {
+    id: 'Sacred Grimoire',
+    restriction: EvoItemRestictions.AC_CA,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'HolyGrimore',
+    description: 'Contains sacred scriptures written by Archangel Gabriel. Its contents are yet to be translated, but it is to be believed that those who seek the power to help the weak are blessed with his blessing.',
+    effects: [
+      '+1050 Intelligence',
+      '+5000 Mana',
+      '+15% Cooldown Reduction',
+      '+10% Heal Power',
+      'Active: Heals the target\'s HP for [12,000\xa0+\xa060% Int\xa0+\xa030%\xa0Missing\xa0HP] and 500 Armor for 2.5 seconds. Cooldown 30s.'
+    ],
+    crafting: [
+      'Book of Hylia',
+      'Golden Fragment',
+      'Blessing of Dragon',
+      'Dragon Stone',
+      'Fire Stone',
+      'Angelic Hope',
+    ],
+    source: 'Aghanim',
+  },
+
   'Hyrulean Tome of Wisdom': {
     id: 'Hyrulean Tome of Wisdom',
     restriction: EvoItemRestictions.HIGH_TEMPLAR,

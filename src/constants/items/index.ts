@@ -96,5 +96,14 @@ export const evoItems: {[id: string]: EvoItem} = {
     description: 'rip M1 dungeon',
     effects:[],
     source: 'engame nubs',
+  },
+  'Ownership Paper': {
+    id: 'Ownership Paper',
+    restriction: EvoItemRestictions.ALL_CLASSES,
+    rarity: EvoRarity.GODLY,
+    icon: 'OwnershipPaper',
+    description: 'hapi',
+    effects:[],
+    source: 'engame nubs',
   }
 };

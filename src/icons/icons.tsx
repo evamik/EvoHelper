@@ -28,6 +28,7 @@ import BTNOrbOfFire from './png/wc3/BTNOrbOfFire.png';
 import TheOnesHead from './png/wc3/TheOnesHead.png';
 import BTNMetamorphosis from './png/wc3/BTNMetamorphosis.png';
 import SparkOfJoy from './png/evo/special/SparkOfJoy.png';
+import OwnershipPaper from './png/evo/special/OwnershipPaper.png';
 import SphereOfDoom from './png/evo/SphereOfDoom.png';
 import Dragonstone from './png/evo/Dragonstone.png';
 
@@ -349,6 +350,7 @@ const icons = {
   TheOnesHead,
   BTNMetamorphosis,
   SparkOfJoy,
+  OwnershipPaper,
   SphereOfDoom,
   Dragonstone,
 
