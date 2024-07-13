@@ -6,10 +6,11 @@ import { tier4Classes } from '../../constants/classes';
 import { useSettingsContext } from '../../settingsContext';
 
 interface CharactersListProps {
-  list: Class[]
+  list: Class[],
+  accountURL: string,
 }
 
-export function CharactersList({ list }: CharactersListProps) {
+export function CharactersList({accountURL, list }: CharactersListProps) {
   const { onlyT4Classes, favouriteClasses } = useSettingsContext();
   const favouriteClassList = useMemo(() => {
     return list.filter((character) => {
@@ -37,6 +38,7 @@ export function CharactersList({ list }: CharactersListProps) {
             key={`${character.hero}_${character.level}`}
             character={character}
             favourite={true}
+            accountURL={accountURL}
           />
         ))}
       </Box>
@@ -45,6 +47,7 @@ export function CharactersList({ list }: CharactersListProps) {
           <CharacterCard
             key={`${character.hero}_${character.level}`}
             character={character}
+            accountURL={accountURL}
           />
         ))}
       </Box>

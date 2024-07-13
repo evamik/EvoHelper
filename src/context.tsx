@@ -52,7 +52,9 @@ export const CharacterProvider: FC<PropsWithChildren> = ({ children }) => {
     if (!account || !id) {
       return undefined;
     }
-    return allClasses[account]?.find((character) => character.hero === id);
+    const formattedAccount = account.indexOf('$') !== -1 ? account.replace('$', '#') : account;
+
+    return allClasses[formattedAccount]?.find((character) => character.hero === id);
   };
   const onLoadClick = (character: Class, legacy?: boolean) => {
     if (character && character.code) {

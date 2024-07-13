@@ -14,8 +14,9 @@ import { useSettingsContext } from '../../settingsContext';
 interface CharacterCardProps {
   character: Class;
   favourite?: boolean;
+  accountURL: string;
 }
-export function CharacterCard({ character, favourite }: CharacterCardProps) {
+export function CharacterCard({ character, favourite, accountURL }: CharacterCardProps) {
   const navigate = useNavigate();
   const { addFavouriteClass, removeFavouriteClass } = useSettingsContext();
   const { onLoadClick } = useCharacterContext();
@@ -33,7 +34,7 @@ export function CharacterCard({ character, favourite }: CharacterCardProps) {
         >
           <Typography
             onClick={() => {
-              navigate(`/character/${character.hero}`);
+              navigate(`/character/${accountURL}/${character.hero}`);
             }}
             sx={{ cursor: 'pointer' }}
             variant="body1"
@@ -60,7 +61,7 @@ export function CharacterCard({ character, favourite }: CharacterCardProps) {
             Load
           </Button>
           <Button onClick={() => {
-            navigate(`/character/${character.hero}`);
+            navigate(`/character/${accountURL}/${character.hero}`);
           }}>
             Details
           </Button>

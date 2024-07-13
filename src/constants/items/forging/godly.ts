@@ -6,7 +6,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Aerielis: {
     id: 'Aerielis',
     restriction: EvoItemRestictions.ARCHER,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Aerielis',
     description:
       "The bow of the fallen goddess, Aerielis. This legendary bow was once an augmented version of Atalanta's Speed, then blessed by the fallen angel, granting unmatched grace and power.",
@@ -22,7 +22,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   'Blade of Awe': {
     id: 'Blade of Awe',
     restriction: EvoItemRestictions.NOBLE,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'BladeOfAwe',
     description:
       'By merging all five legendary artifacts scattered across the world of Silvasia, the Blade of Awe is formed. The Blade of Awe is a legendary magical weapon and perhaps even the strongest weapon in the land of Silvasia.',
@@ -39,7 +39,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Cosmos: {
     id: 'Cosmos',
     restriction: EvoItemRestictions.FAIRY,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Cosmos',
     description: 'The origin of the universe.',
     effects: [
@@ -54,7 +54,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Ender: {
     id: 'Ender',
     restriction: EvoItemRestictions.DI,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Ender',
     description:
       'The ultimate form of hatred by mankind, manifested by the devils to unleash their cruel desires against those who oppose evil',
@@ -71,7 +71,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Fate: {
     id: 'Fate',
     restriction: EvoItemRestictions.TEMPLAR,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Fate',
     description:
       'Named after Fate Testarossa, also known as Fate T. Harlaown, this powerful energy blade is her Bardiche Assault in Zanber Form.',
@@ -88,7 +88,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   'Guardian Force': {
     id: 'Guardian Force',
     restriction: EvoItemRestictions.SWORDSMAN,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'GuardianForce',
     description:
       'From the realms of God, the Guardian Force is a relic that oaths to protect its wielder and destroy evil for good.',
@@ -104,7 +104,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Hope: {
     id: 'Hope',
     restriction: EvoItemRestictions.ACOLYTE,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Hope',
     description:
       'A long forgotten Ancient book which is said to grant the wielder the power to guide the light and purify the dark and to bring hope to humanity.',
@@ -122,7 +122,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   "Kiea's Tale": {
     id: "Kiea's Tale",
     restriction: EvoItemRestictions.NINJA,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'KieasTale',
     description:
       'The lost weapon of Kiea, the great ninja. She was known as the legendary assassin who was able to take down multiple foes singlehandedly.',
@@ -139,7 +139,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   'Raising Heart': {
     id: 'Raising Heart',
     restriction: EvoItemRestictions.INITIATE,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'RaisingHeart',
     description:
       'Used by Takamachi Nanoha, this intelligent magical device has helped her win countless battles for years.',
@@ -155,7 +155,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Reinforce: {
     id: 'Reinforce',
     restriction: EvoItemRestictions.DRUID,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Reinforce',
     description:
       'Once used by Yagami Hayate, a good friend of Nanoha and Fate, the Blessed Wind Reinforce is capable of casting devastating S Rank spells.',
@@ -173,7 +173,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   'Rune Sihill': {
     id: 'Rune Sihill',
     restriction: EvoItemRestictions.WH,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'RuneSihill',
     description:
       'This Mahakaman Rune Sihill is known as the best steel sword ever used in Witcher Fighting Styles. Because of its light weight and sharp edge, it can cut through just about anything and enables the user to move and attack as gracefully as a swan.',
@@ -187,10 +187,27 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
     crafting: ['Twilight', 'Eve'],
     source: 'Mystery craft',
   },
+  'Harmony': {
+    id: 'Harmony',
+    restriction: EvoItemRestictions.BARD,
+    rarity: EvoRarity.GODLY,
+    icon: 'Harmony',
+    description:
+      'Crafted from enchanted moonstone and silver filigree, this magical instrument produces celestial tones that resonate with the energies of the night sky. When played, it channels lunar magic, captivating listeners with an ethereal melody that transports them to a realm of enchantment and dreams.',
+    effects: [
+      '+1500 Intelligence',
+      '+37500 Mana',
+      '+10% Cooldown speed',
+      'Passive: Damaging an enemy with Magic Damage deals [60 000 + 300% Int] pure dmg to enemy and enemies nearby. Cooldown 4s.',
+    ],
+    crafting: ['Twilight', 'Eve'],
+    source: 'Mystery craft',
+  },
+
   'Tooth of Belial': {
     id: 'Tooth of Belial',
     restriction: EvoItemRestictions.THIEF,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'ToothOfBelial',
     description:
       'Used by the famed Guild Assassin, James Akida, the Tooth of Belial is known to be the "Angel of Death", because of its superior speed adjustments, godly damage outputs, and powerful enchantments that makes the wielder nearly impossible to hit.',
@@ -206,7 +223,7 @@ const godlyItemsNew: { [id: string]: EvoItem } = {
   Virtue: {
     id: 'Virtue',
     restriction: EvoItemRestictions.CASTER,
-    rarity: EvoRarity.FORGED,
+    rarity: EvoRarity.GODLY,
     icon: 'Virtue',
     description:
       'The forbidden weapon of the Seven Sages, this wand can cast unbreakable seals and channel mysterious forces.',

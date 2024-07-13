@@ -47,7 +47,7 @@ export default function App() {
                   alignItems: 'center',
                 }}
               >
-                <Typography>Evo Helper 1.0.0</Typography>
+                <Typography>Evo Helper 1.0.1</Typography>
                 <IconButton onClick={loadClasses}>
                   <CachedIcon />
                 </IconButton>
@@ -88,11 +88,11 @@ export default function App() {
             <Routes>
               <Route path="/items" element={<ItemsPage/>}/>
               <Route path="/item/:id" element={<ItemPage/>}/>
-              <Route path="/characters/:account?" element={<LoaderPage />} />
+              <Route path="/characters/:accountURL?" element={<LoaderPage />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/fishing" element={<FishingPage />} />
               <Route path="/lastruninfo" element={<LastRunInfoPage />} />
-              <Route path="/character/:account/:id" element={<Character />} />
+              <Route path="/character/:accountURL/:id" element={<Character />} />
             </Routes>
             </Box>
           </Box>

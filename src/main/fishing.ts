@@ -13,7 +13,7 @@ interface ColorCoordinateObj {
 
 const FISHING_ROD_CLICK_INTERVAL = 1000 * 5; // 5 seconds
 const COLOR_MARGIN = 10;
-const AUTOSAVE_INTERVAL = 60 * 60 * 1000; // 1 hour
+const AUTOSAVE_INTERVAL = 30 * 60 * 1000; // 30m
 
 let scanInterval: ReturnType<typeof setInterval> | undefined
 let startInterval: ReturnType<typeof setInterval> | undefined

@@ -15,10 +15,10 @@ import { GodlyProgress } from './GodlyProgress';
 
 export const Character: FC = () => {
   const { getCharacter, onLoadClick } = useCharacterContext();
-  const { account, id } = useParams();
+  const { accountURL, id } = useParams();
 
-  const character = getCharacter(account, id);
-  if (!account || !id || !character) {
+  const character = getCharacter(accountURL, id);
+  if (!accountURL || !id || !character) {
     return null;
   }
 
@@ -26,7 +26,7 @@ export const Character: FC = () => {
 
   return (
     <div>
-      <IconButton style={{ left: -10 }} component={Link} to={`/characters/${account}`}>
+      <IconButton style={{ left: -10 }} component={Link} to={`/characters/${accountURL}`}>
         <ArrowBackIcon />
         <Typography variant="caption">Go back</Typography>
       </IconButton>
