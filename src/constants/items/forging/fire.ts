@@ -160,7 +160,6 @@ export const fireItems: { [id: string]: EvoItem } = {
       'The bow used to deliver the death sentence to demonic creatures.',
     effects: [
       '+6800 Damage',
-      '+10% Cooldown Reduction',
       'Active: Gains 4,200 Damage for 10 seconds. Cooldown 25s.',
     ],
     crafting: ['Dragon Bow', 'Fire Stone'],
