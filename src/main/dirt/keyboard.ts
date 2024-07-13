@@ -1,4 +1,4 @@
-import { Key, keyboard, clipboard } from '@nut-tree/nut-js';
+import { Key, keyboard } from '@nut-tree/nut-js';
 
 /*
 export const executeCommand = async (command: string) => {
@@ -7,7 +7,8 @@ export const executeCommand = async (command: string) => {
     async () => {
       await keyboard.pressKey(Key.Enter);
       await keyboard.releaseKey(Key.Enter);
-      await keyboard.type(Key.LeftControl, Key.V);
+       await keyboard.pressKey(Key.LeftControl, Key.V);
+      await keyboard.releaseKey(Key.LeftControl, Key.V);
       await keyboard.pressKey(Key.Enter);
       await keyboard.releaseKey(Key.Enter);
     }

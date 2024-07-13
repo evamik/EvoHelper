@@ -84,11 +84,26 @@ const loadClass = async (p: string) => {
   });
 };
 
-export const loadTevefData = async (p: Array<string>) => {
+export const loadTevefAccount = async (p: Array<string>) => {
   const potentialClasses = await fs.readdir(path.join(...p));
   const classes = potentialClasses.filter((el) => allClasses.includes(el));
 
   return await Promise.all(
     classes.map((cl) => loadClass(path.join(...p, cl))),
   );
+};
+
+export const loadTevefData = async (p: string[]) => {
+  let potentialAccounts = await fs.readdir(path.join(...p));
+  potentialAccounts = potentialAccounts.filter(account => account.indexOf('#') !== -1);
+
+  let res: any = {};
+  for (const account of potentialAccounts) {
+    const data = await loadTevefAccount([...p, account])
+    if (data) {
+      res[account] = data;
+    }
+  }
+
+  return res;
 };

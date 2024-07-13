@@ -20,9 +20,9 @@ import { parseLastRun } from './lastrun';
 
 let mainWindow: BrowserWindow | null = null;
 
-ipcMain.on('ipc', async (event, arg) => {
+ipcMain.on('loadData', async (event, arg) => {
   const data = await loadTevefData(arg);
-  event.reply('ipc', data);
+  event.reply('loadData', data);
 });
 
 ipcMain.on('load', async (event, arg) => {

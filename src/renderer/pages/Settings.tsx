@@ -10,10 +10,12 @@ export default function Settings() {
     wc3path,
     battleTag,
     extraLines,
+    multipleAccounts,
     onlyT4Classes,
     setOnlyT4Classes,
     setExtra,
     setBattleTag,
+    setMultipleAccounts,
     setWc3path,
     save,
   } = useSettingsContext();
@@ -52,6 +54,19 @@ export default function Settings() {
         <Switch
           checked={onlyT4Classes}
           onChange={(e) => setOnlyT4Classes(e.target.checked)}
+        />
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Typography>Multiple accounts</Typography>
+        <Switch
+          checked={multipleAccounts}
+          onChange={(e) => setMultipleAccounts(e.target.checked)}
         />
       </Box>
       <TextField

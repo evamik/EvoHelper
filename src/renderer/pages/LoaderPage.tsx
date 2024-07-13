@@ -1,53 +1,74 @@
-import Box from '@mui/material/Box';
 import { useCharacterContext } from '../../context';
-import { CharacterCard } from '../components/CharacterCard';
 import { useSettingsContext } from '../../settingsContext';
 import { useMemo } from 'react';
-import { tier4Classes } from '../../constants/classes';
-import Divider from '@mui/material/Divider';
+import { useParams, useNavigate } from 'react-router-dom';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import { CharactersList } from '../components/CharactersList';
 
 export function LoaderPage() {
   const { allClasses } = useCharacterContext();
-  const { onlyT4Classes, favouriteClasses } = useSettingsContext();
+  const navigate = useNavigate();
+  const { battleTag, multipleAccounts } = useSettingsContext();
 
-  const favouriteClassList = useMemo(() => {
-    return allClasses.filter((character) => {
-        const filteredByT4 = onlyT4Classes && !tier4Classes.includes(character.hero);
-        const isFavourite = favouriteClasses.includes(character.hero);
-        return isFavourite && !filteredByT4
-      }
-    );
-  }, [allClasses, onlyT4Classes, favouriteClasses]);
+  const { account } = useParams();
 
-  const restClassesList = useMemo(() => {
-    return allClasses.filter((character) => {
-        const filteredByT4 = onlyT4Classes && !tier4Classes.includes(character.hero);
-        const isFavourite = favouriteClasses.includes(character.hero);
-        return !isFavourite && !filteredByT4
-      }
-    );
-    }, [allClasses, onlyT4Classes, favouriteClasses]
-  )
+  const selectedAccount = useMemo( () => {
+    const formattedAccount = account?.replace('$', '#');
+    if (Object.keys(allClasses).length === 0) {
+      return "";
+    }
+
+    if (formattedAccount && allClasses.hasOwnProperty(formattedAccount)) {
+      return formattedAccount;
+    }
+
+    if (battleTag && allClasses.hasOwnProperty(battleTag)) {
+      return battleTag;
+    }
+
+    return Object.keys(allClasses)[0];
+  }, [account, allClasses, battleTag]);
+
+  const selectedAccountClasses = useMemo(() => {
+    if (!selectedAccount || !allClasses.hasOwnProperty(selectedAccount)) {
+      return [];
+    }
+
+    return allClasses[selectedAccount];
+  }, [selectedAccount, allClasses]);
+
+  const onAccountSelect = (account: string) => {
+    // i hate # in urls...
+    navigate(`/characters/${account.replace('#', '$')}`);
+  }
+
+  if (!selectedAccount) {
+    return null;
+  }
 
   return (
-    <Box>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingBottom: '30px' }}>
-        {favouriteClassList.map((character) => (
-          <CharacterCard
-            key={`${character.hero}_${character.level}`}
-            character={character}
-            favourite={true}
-          />
-        ))}
-      </Box>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-        {restClassesList.map((character) => (
-          <CharacterCard
-            key={`${character.hero}_${character.level}`}
-            character={character}
-          />
-        ))}
-      </Box>
-    </Box>
+    <>
+      {(Object.keys(allClasses).length > 1) && multipleAccounts && (
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="account-selector-label">Account</InputLabel>
+          <Select
+            labelId="account-selector-label"
+            value={selectedAccount}
+            label="Account"
+            onChange={(e) => onAccountSelect(e.target.value)}
+          >
+            {
+              Object.keys(allClasses).map((acc) => (
+                <MenuItem key={acc} value={acc}>{acc}</MenuItem>
+              ))
+            }
+          </Select>
+        </FormControl>
+      )}
+      <CharactersList list={selectedAccountClasses} />
+    </>
   );
 }
