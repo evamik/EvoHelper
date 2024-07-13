@@ -39,7 +39,7 @@ ipcMain.on('load', async (event, arg) => {
 });
 
 ipcMain.on('fishing_arm', async (_, arg) => {
-  armFishing(arg.hotkey, arg.up, arg.down, arg.delay);
+  armFishing(arg.hotkey, arg.up, arg.down, arg.delay, arg.isAutosave);
 });
 ipcMain.on('fishing_disarm', async () => {
   stopFishingAndUnregisterHotkeys();
