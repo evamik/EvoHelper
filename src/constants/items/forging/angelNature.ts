@@ -135,7 +135,7 @@ export const angelNature: { [id: string]: EvoItem } = {
       'Regarded as the "Bow of End", shots made using this bow is highly precise and deadly, while being lightweight that allows for great agility.',
     effects: [
       '+6000 Damage',
-      'Active: Gains 3750 Damage for 10 seconds. Cooldown 25s.',
+      'Active: Gains 6000 Damage for 10 seconds. Cooldown 25s.',
     ],
     crafting: [
       'Windforce',
