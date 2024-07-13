@@ -17,7 +17,6 @@ import { loadTevefData } from './load';
 import { executeCommand } from './dirt/keyboard';
 import { armFishing, stopFishingAndUnregisterHotkeys } from './fishing';
 import { parseLastRun } from './lastrun';
-import { Key } from '@nut-tree/nut-js';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -39,10 +38,10 @@ ipcMain.on('load', async (event, arg) => {
   });
 });
 
-ipcMain.on('fishing_arm', async (event, arg) => {
+ipcMain.on('fishing_arm', async (_, arg) => {
   armFishing(arg.hotkey, arg.up, arg.down, arg.delay);
 });
-ipcMain.on('fishing_disarm', async (event, arg) => {
+ipcMain.on('fishing_disarm', async () => {
   stopFishingAndUnregisterHotkeys();
 });
 
@@ -69,7 +68,8 @@ ipcMain.on('settings_read', async (event) => {
 });
 
 ipcMain.on('request_last_run', async (event, arg) => {
-  parseLastRun(arg);
+  const data = await parseLastRun(arg);
+  event.reply('last_run_info', data);
 });
 
 ipcMain.on('settings_write', async (event, arg) => {

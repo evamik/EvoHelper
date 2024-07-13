@@ -41,6 +41,7 @@ import { EvoRarity } from '../rarity';
 import { EvoItem } from './item';
 import { hyruleProphetItems } from './mythic/hyruleProphet';
 import { chiralValleyItems } from './mythic/chiralValley';
+import { championOfChaosItems } from './mythic/championOfChaos';
 
 export const evoItems: {[id: string]: EvoItem} = {
   ...fishingItems,
@@ -88,6 +89,8 @@ export const evoItems: {[id: string]: EvoItem} = {
   ...aghanimItems,
   ...alterEgoItems,
   ...hyruleProphetItems,
+  ...championOfChaosItems,
+
   'Spark of Joy': {
     id: 'Spark of Joy',
     restriction: EvoItemRestictions.ALL_CLASSES,

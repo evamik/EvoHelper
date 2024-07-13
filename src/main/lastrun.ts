@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import { clipboard } from '@nut-tree/nut-js';
 
 const PREFIX = 'call Preload( "';
 const TITLE_AFFIX = 'Drop Details';
@@ -22,11 +21,9 @@ export const parseLastRun = async (path: string) => {
   const title = classFile.slice(titleStartIndex + PREFIX.length, titleEndIndex - 1);
   const data = extractDropDetails(classFile.slice(titleEndIndex));
 
-  await clipboard.setContent(
-    `> **${title}**\n` +
+  return `> **${title}**\n` +
     data
-      .map((el) => `${el.shift()} - ${el.shift()}: ${el.join(',')}`)
-      .join('\n')
-  );
+      .map((el) => `${el.shift()} - ${el.shift()}: ${el.join(', ')}`)
+      .join('\n');
 }
 

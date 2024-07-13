@@ -15,11 +15,10 @@ import { ItemsPage } from './pages/ItemsPage';
 import { LoaderPage } from './pages/LoaderPage';
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
-import { useSettingsContext } from '../settingsContext';
+import { LastRunInfoPage } from './pages/LastRunInfoPage';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
-  const { wc3path } = useSettingsContext();
 
   return (
     <Router initialEntries={['/settings']}>
@@ -47,7 +46,7 @@ export default function App() {
                   alignItems: 'center',
                 }}
               >
-                <Typography>Evo Helper 0.7.3</Typography>
+                <Typography>Evo Helper 1.0.0</Typography>
                 <IconButton onClick={loadClasses}>
                   <CachedIcon />
                 </IconButton>
@@ -62,8 +61,8 @@ export default function App() {
                 <MenuItem component={Link} to="/fishing">
                   Fishing
                 </MenuItem>
-                <MenuItem onClick={() => window.electron.ipcRenderer.sendMessage('request_last_run', wc3path)}>
-                  Copy last run info
+                <MenuItem component={Link} to="/lastruninfo">
+                  Last run info
                 </MenuItem>
               </MenuList>
             </Box>
@@ -91,6 +90,7 @@ export default function App() {
               <Route path="/characters" element={<LoaderPage />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/fishing" element={<FishingPage />} />
+              <Route path="/lastruninfo" element={<LastRunInfoPage />} />
               <Route path="/character/:id" element={<Character />} />
             </Routes>
             </Box>
