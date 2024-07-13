@@ -30,10 +30,12 @@ export enum EvoItemRestictions {
   NINJA = 30,
   PROFESSION = 31,
   AC_CA = 32,
+  BARD = 33,
 }
 
 export const evoItemRestrictions = {
   [EvoItemRestictions.ALL_CLASSES]: 'All classes',
+  [EvoItemRestictions.BARD]: 'Bard only',
   [EvoItemRestictions.FORGE]: 'Forge material',
   [EvoItemRestictions.MELEE]: 'Melee classes only',
   [EvoItemRestictions.MELEE_AGI]: 'Melee agility classes only',

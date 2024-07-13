@@ -13,10 +13,10 @@ export function LoaderPage() {
   const navigate = useNavigate();
   const { battleTag, multipleAccounts } = useSettingsContext();
 
-  const { account } = useParams();
+  const { accountURL } = useParams();
 
   const selectedAccount = useMemo( () => {
-    const formattedAccount = account?.replace('$', '#');
+    const formattedAccount = accountURL?.replace('$', '#');
     if (Object.keys(allClasses).length === 0) {
       return "";
     }
@@ -30,7 +30,7 @@ export function LoaderPage() {
     }
 
     return Object.keys(allClasses)[0];
-  }, [account, allClasses, battleTag]);
+  }, [accountURL, allClasses, battleTag]);
 
   const selectedAccountClasses = useMemo(() => {
     if (!selectedAccount || !allClasses.hasOwnProperty(selectedAccount)) {
@@ -68,7 +68,10 @@ export function LoaderPage() {
           </Select>
         </FormControl>
       )}
-      <CharactersList list={selectedAccountClasses} />
+      <CharactersList
+        list={selectedAccountClasses}
+        accountURL={selectedAccount.replace('#', '$')}
+      />
     </>
   );
 }
