@@ -13,14 +13,12 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Tooltip from '@mui/material/Tooltip';
 import { GodlyProgress } from './GodlyProgress';
 
-
-
 export const Character: FC = () => {
-  const { getCharacterById, onLoadClick } = useCharacterContext();
-  const { id } = useParams();
+  const { getCharacter, onLoadClick } = useCharacterContext();
+  const { account, id } = useParams();
 
-  const character = getCharacterById(id);
-  if (!character) {
+  const character = getCharacter(account, id);
+  if (!account || !id || !character) {
     return null;
   }
 
@@ -28,7 +26,7 @@ export const Character: FC = () => {
 
   return (
     <div>
-      <IconButton style={{ left: -10 }} component={Link} to="/characters">
+      <IconButton style={{ left: -10 }} component={Link} to={`/characters/${account}`}>
         <ArrowBackIcon />
         <Typography variant="caption">Go back</Typography>
       </IconButton>

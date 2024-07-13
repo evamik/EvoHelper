@@ -88,11 +88,11 @@ export default function App() {
             <Routes>
               <Route path="/items" element={<ItemsPage/>}/>
               <Route path="/item/:id" element={<ItemPage/>}/>
-              <Route path="/characters" element={<LoaderPage />} />
+              <Route path="/characters/:account?" element={<LoaderPage />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/fishing" element={<FishingPage />} />
               <Route path="/lastruninfo" element={<LastRunInfoPage />} />
-              <Route path="/character/:id" element={<Character />} />
+              <Route path="/character/:account/:id" element={<Character />} />
             </Routes>
             </Box>
           </Box>
