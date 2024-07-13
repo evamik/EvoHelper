@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import { allClasses } from '../constants/classes';
 
 type Loadout = string[];
+
 export interface Class {
   hero: string;
   gold: string;

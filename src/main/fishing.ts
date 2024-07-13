@@ -1,6 +1,7 @@
 import { globalShortcut } from 'electron';
 import { keyboard, Key, screen, Point} from '@nut-tree/nut-js';
-import { type } from 'node:os';
+
+keyboard.config.autoDelayMs = 1;
 
 interface ColorCoordinateObj {
   R: number;
@@ -10,11 +11,14 @@ interface ColorCoordinateObj {
   y: number;
 }
 
-const FISHING_ROD_CLICK_INTERVAL = 1000 * 5;
+const FISHING_ROD_CLICK_INTERVAL = 1000 * 5; // 5 seconds
 const COLOR_MARGIN = 10;
+const AUTOSAVE_INTERVAL = 60 * 60 * 1000; // 1 hour
 
 let scanInterval: ReturnType<typeof setInterval> | undefined
 let startInterval: ReturnType<typeof setInterval> | undefined
+let autoSaveInterval: ReturnType<typeof setInterval> | undefined
+
 const click = async (button: Key) => {
   await keyboard.pressKey(button)
   await keyboard.releaseKey(button);
@@ -51,7 +55,7 @@ export function stopFishingAndUnregisterHotkeys() {
 
   }
 }
-export function armFishing(rodHotkey: any, up: ColorCoordinateObj, down: ColorCoordinateObj, delay: number) {
+export function armFishing(rodHotkey: any, up: ColorCoordinateObj, down: ColorCoordinateObj, delay: number, isAutosave: boolean = false) {
   stopFishingAndUnregisterHotkeys();
   globalShortcut.register('CommandOrControl+9', () => {
     if(!scanInterval && !startInterval) {
@@ -60,6 +64,14 @@ export function armFishing(rodHotkey: any, up: ColorCoordinateObj, down: ColorCo
         click(rodHotkey);
       }, FISHING_ROD_CLICK_INTERVAL);
       scanInterval = fishingScanInterval(delay, up, down);
+      if (isAutosave) {
+        autoSaveInterval = setInterval(async () => {
+          click(Key.Enter)
+            .then(() => click(Key.Minus))
+            .then(() => click(Key.S))
+            .then(() => click(Key.Enter))
+        }, AUTOSAVE_INTERVAL);
+      }
     }
   });
   globalShortcut.register('CommandOrControl+-', () => {
@@ -68,8 +80,11 @@ export function armFishing(rodHotkey: any, up: ColorCoordinateObj, down: ColorCo
       clearInterval(scanInterval);
      //@ts-ignore
       clearInterval(startInterval);
-      scanInterval = undefined;
+     //@ts-ignore
+     clearInterval(autoSaveInterval);
+     scanInterval = undefined;
       startInterval = undefined;
+      autoSaveInterval = undefined;
     } catch (e) {
       // oh no, no interval to clear
       // anyway

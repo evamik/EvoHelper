@@ -38,7 +38,7 @@ export default function Settings() {
         value={battleTag}
         onChange={(e) => setBattleTag(e.target.value)}
         id="tag"
-        label="Battle tag"
+        label="Default battle tag"
         variant="standard"
       />
       <Box
