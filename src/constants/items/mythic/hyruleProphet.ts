@@ -112,4 +112,47 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
     ],
     source: 'Hyrule Prophet'
   },
+  "Container Sigil": {
+    id: "Container Sigil",
+    restriction: EvoItemRestictions.FORGING_MATERIAL,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'ContainerSigil',
+    description:
+      "A vessel of elements.",
+    effects: [],
+    source: 'Hyrule Prophet'
+  },
+  "Crystallized Sigil of Elements": {
+    id: "Crystallized Sigil of Elements",
+    restriction: EvoItemRestictions.FORGING_MATERIAL,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'CrystallizedSigilOfElements',
+    description:
+      "The sealed form of elements.",
+    effects: [],
+    crafting: [
+      'Pure Sigil',
+      'Impure Sigil',
+      'Mirror Sigil',
+      "Harbinger's Heart",
+      'Pure Light Synthesis',
+    ],
+    source: 'Hyrule Prophet'
+  },
+  "Prismatic Sigil of Elements": {
+    id: "Prismatic Sigil of Elements",
+    restriction: EvoItemRestictions.FORGING_MATERIAL,
+    rarity: EvoRarity.MYTHIC,
+    icon: 'PrismaticSigilOfElements',
+    description:
+      "The unleashed form of elements.",
+    effects: [],
+    crafting: [
+      'Container Sigil',
+      'Crystallized Sigil of Elements',
+      'Pure Ignited Incinerator',
+      'Pure Light Synthesis',
+    ],
+    source: 'Hyrule Prophet'
+  },
 }

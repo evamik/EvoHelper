@@ -189,6 +189,7 @@ import { m1CraftIcons } from './m1Craft';
 import { hyruleProphetIcons } from './hyruleProphetIcons';
 import { weaponMasterIcons } from './weaponMaster';
 import { m2Icons } from './m2Icons';
+import { championOfChaosIcons } from './championOfChaos';
 
 const icons = {
   EmptySlotIcon,
@@ -377,6 +378,7 @@ const icons = {
   ...aghanimIcons,
   ...m1CraftIcons,
   ...hyruleProphetIcons,
+  ...championOfChaosIcons,
 };
 
 export const iconFromId = (id: keyof typeof icons): string => {

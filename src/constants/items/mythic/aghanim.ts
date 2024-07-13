@@ -23,7 +23,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Dragon Stone',
       'Angelic Hope'
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Calamity': {
     id: 'Calamity',
@@ -44,7 +44,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope'
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Celestial Wand': {
     id: 'Celestial Wand',
@@ -66,7 +66,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Holy Bible': {
     id: 'Holy Bible',
@@ -87,7 +87,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   "Seraph's Embrace": {
     id: "Seraph's Embrace",
@@ -110,7 +110,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Holy Grimoire': {
     id: 'Holy Grimoire',
@@ -133,7 +133,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Sacred Grimoire': {
     id: 'Sacred Grimoire',
@@ -156,7 +156,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
 
   'Hyrulean Tome of Wisdom': {
@@ -178,7 +178,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Prismatic Barrier': {
     id: 'Prismatic Barrier',
@@ -200,7 +200,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Harbinger\'s Heart',
       'Angelic Hope',
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Sovereign Sword': {
     id: 'Sovereign Sword',
@@ -222,7 +222,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope'
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'The Vanquisher': {
     id: 'The Vanquisher',
@@ -243,7 +243,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope'
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Valhalla': {
     id: 'Valhalla',
@@ -263,7 +263,7 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Fire Stone',
       'Angelic Hope'
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
   'Oracle': {
     id: 'Oracle',
@@ -278,13 +278,13 @@ export const aghanimItems: { [id: string]: EvoItem } = {
       'Active: Grants 30% Heal Power for 10 seconds. Cooldown 25s.'
     ],
     crafting: [
-      'Flask of Oasis',
+      'Flask of the Oasis',
       'Nature Fragment',
       'Mythical Armor Piece',
       'Blessing of Dragon',
       'Fire Stone',
       'Angelic Hope'
     ],
-    source: 'Aghanim',
+    source: 'Agahnim',
   },
 }
