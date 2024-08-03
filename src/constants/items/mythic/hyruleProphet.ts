@@ -19,7 +19,6 @@ export const hyruleProphetItems: { [id: string]: EvoItem } = {
       'Pure Light Synthesis',
     ],
     source: 'Hyrule Prophet',
-    materialFor: ["Ancient Omen", "Calamity", "Celestial Wand", "Everlasting Youth", "Holy Grimoire", "Link to the Past", "Prismatic Barrier", "Sovereign Sword", "Ascended Light of Destiny", "Cane of Byrna", "Crisis Core", "Consecration", "Drakath's Armor", "Eliot", "Moon Pearl", "Necrotic Sword of Doom", "Sinister Staff", "Sword of Akasha", "Titan's Mitt", "Ungodly Reaper of Nulgath"]
   },
   'Angelic Heart': {
     id: 'Angelic Heart',
