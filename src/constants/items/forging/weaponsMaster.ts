@@ -170,7 +170,7 @@ export const weaponsMasterItems: { [id: string]: EvoItem } = {
       'Rare Weapon Piece',
       'Rare Handle Piece',
       'Quicksilver Fragment',
-      "Silver",
+      'Silver',
       "Hydra's Bane",
 
     ],
