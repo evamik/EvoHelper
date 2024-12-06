@@ -19,9 +19,10 @@ import { LastRunInfoPage } from './pages/LastRunInfoPage';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
+  loadClasses();
 
   return (
-    <Router initialEntries={['/settings']}>
+    <Router initialEntries={[ '/characters' ]}>
       <ThemeProvider theme={theme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
