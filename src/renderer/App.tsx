@@ -46,7 +46,7 @@ export default function App() {
                   alignItems: 'center',
                 }}
               >
-                <Typography>Evo Helper 1.0.1</Typography>
+                <Typography>Evo Helper 1.0.2</Typography>
                 <IconButton onClick={loadClasses}>
                   <CachedIcon />
                 </IconButton>

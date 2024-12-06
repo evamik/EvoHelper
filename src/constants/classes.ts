@@ -25,6 +25,7 @@ export const tier4Classes = [
   'Paladin',
   'Rhapsody',
   'Demon Incarnate',
+  'Mythsong'
 ];
 
 export const allClasses = [
@@ -61,6 +62,7 @@ export const allClasses = [
   'Fairy',
   'Sprite',
   'Constellation',
+  'Mythsong',
   'Astronomer',
   'Cleric',
   'Priest',
