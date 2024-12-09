@@ -1,18 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
-import { allClasses } from '../constants/classes';
-
-type Loadout = string[];
-
-export interface Class {
-  hero: string;
-  gold: string;
-  level?: string;
-  powerShards: string;
-  inventory: Loadout;
-  stashes: Loadout[];
-  code: string;
-}
+import { IClassLoad } from '../types';
 
 const extractItem = (str: string, key: string, end = '" )'): string => {
   if (str.indexOf(key) === -1 || str.indexOf(end) === -1) {
@@ -44,7 +32,7 @@ const extractKey = (str: string, key: string, end = '"'): string => {
   );
 };
 
-const parseClassFile = (str: string): Class => {
+const parseClassFile = (str: string): IClassLoad => {
   return {
     hero: extractKey(str, 'Hero: ', '"'),
     gold: extractKey(str, 'Gold: ', '"'),
@@ -64,33 +52,40 @@ const parseClassFile = (str: string): Class => {
   };
 };
 const loadClass = async (p: string) => {
-  const classDir = await fs.readdir(p);
-  const name = classDir
-    .filter((el) => el.indexOf('[Level ') !== -1)
-    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
-    .pop();
+  try {
+    const classDir = await fs.readdir(p);
+    const name = classDir
+      .filter((el) => el.indexOf('[Level ') !== -1)
+      .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
+      .pop();
 
-  if (!name) {
+    if (!name) {
+      return null;
+    }
+
+    const classFile = await fs.readFile(
+      path.join(p, name),
+      'utf-8'
+    );
+
+    return Object.assign(parseClassFile(classFile), {
+      level: name?.slice(7, name && name.length ? name.length - 5 : 0),
+    });
+  } catch (e) {
+    // If we failed for ANY reason - dont panic. 
+    // nulls are filtered down the line
     return null;
   }
-
-  const classFile = await fs.readFile(
-    path.join(p, name),
-    'utf-8'
-  );
-
-  return Object.assign(parseClassFile(classFile), {
-    level: name?.slice(7, name && name.length ? name.length - 5 : 0),
-  });
 };
 
 export const loadTevefAccount = async (p: Array<string>) => {
   const potentialClasses = await fs.readdir(path.join(...p));
-  const classes = potentialClasses.filter((el) => allClasses.includes(el));
 
-  return await Promise.all(
-    classes.map((cl) => loadClass(path.join(...p, cl))),
+  const res = await Promise.all(
+    potentialClasses.map((cl) => loadClass(path.join(...p, cl))),
   );
+  return res.filter(e => !!e)
+
 };
 
 export const loadTevefData = async (p: string[]) => {
@@ -107,3 +102,5 @@ export const loadTevefData = async (p: string[]) => {
 
   return res;
 };
+
+

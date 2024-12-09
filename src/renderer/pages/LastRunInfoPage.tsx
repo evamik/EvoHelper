@@ -1,6 +1,6 @@
 import Paper from '@mui/material/Paper';
 import { useEffect, useState } from 'react';
-import { useSettingsContext } from '../../settingsContext';
+import { useSettingsContext } from '../contexts/settingsContext';
 
 export function LastRunInfoPage() {
   const { wc3path } = useSettingsContext();

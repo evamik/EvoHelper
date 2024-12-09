@@ -1,5 +1,5 @@
-import { useCharacterContext } from '../../context';
-import { useSettingsContext } from '../../settingsContext';
+import { useCharacterContext } from '../contexts/characterContext';
+import { useSettingsContext } from '../contexts/settingsContext';
 import { useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Select from '@mui/material/Select';
@@ -9,7 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 import { CharactersList } from '../components/CharactersList';
 
 export function LoaderPage() {
-  const { allClasses } = useCharacterContext();
+  const { accountsDict: allClasses } = useCharacterContext();
   const navigate = useNavigate();
   const { battleTag, multipleAccounts } = useSettingsContext();
 

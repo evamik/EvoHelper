@@ -1,8 +1,8 @@
 import { ChangeEvent, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { Input, InputProps } from '@mui/material';
-import { evoItems } from '../../constants/items';
 import { EvoItemRenderer } from '../components/ItemWithTooltip';
+import { useItemContext } from '../contexts/itemsContext';
 
 type DebounceProps = {
   handleDebounce: (value: string) => void;
@@ -27,10 +27,11 @@ function DebounceInput(props: InputProps & DebounceProps) {
   return <Input {...rest} onChange={handleChange} />;
 }
 export function ItemsPage() {
+  const { items } = useItemContext();
   const [filter, setFilter] = useState<string>('');
 
   const filteredItems = useMemo(() => {
-    return Object.keys(evoItems).filter((id) =>
+    return Object.keys(items).filter((id) =>
       id.toLowerCase().includes(filter.toLowerCase()),
     );
   }, [filter]);

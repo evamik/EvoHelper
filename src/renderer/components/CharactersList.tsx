@@ -1,20 +1,21 @@
-import { Class } from '../../main/load';
 import Box from '@mui/material/Box';
 import { CharacterCard } from './CharacterCard';
 import { useMemo } from 'react';
-import { tier4Classes } from '../../constants/classes';
-import { useSettingsContext } from '../../settingsContext';
+import { useSettingsContext } from '../contexts/settingsContext';
+import { IClassLoad } from '../../types';
+import { useCharacterContext } from '../contexts/characterContext';
 
 interface CharactersListProps {
-  list: Class[],
+  list: IClassLoad[],
   accountURL: string,
 }
 
 export function CharactersList({accountURL, list }: CharactersListProps) {
   const { onlyT4Classes, favouriteClasses } = useSettingsContext();
+  const { tier4ClassesList } = useCharacterContext();
   const favouriteClassList = useMemo(() => {
     return list.filter((character) => {
-        const filteredByT4 = onlyT4Classes && !tier4Classes.includes(character.hero);
+        const filteredByT4 = onlyT4Classes && !tier4ClassesList.includes(character.hero);
         const isFavourite = favouriteClasses.includes(character.hero);
         return isFavourite && !filteredByT4
       }
@@ -23,7 +24,7 @@ export function CharactersList({accountURL, list }: CharactersListProps) {
 
   const restClassesList = useMemo(() => {
       return list.filter((character) => {
-          const filteredByT4 = onlyT4Classes && !tier4Classes.includes(character.hero);
+          const filteredByT4 = onlyT4Classes && !tier4ClassesList.includes(character.hero);
           const isFavourite = favouriteClasses.includes(character.hero);
           return !isFavourite && !filteredByT4
         }

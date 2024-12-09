@@ -4,15 +4,18 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { CharacterProvider } from '../context';
-import { SettingsProvider } from '../settingsContext';
+import { CharacterProvider } from './contexts/characterContext';
+import { SettingsProvider } from './contexts/settingsContext';
+import { ItemsProvider } from './contexts/itemsContext';
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
 root.render(
-  <SettingsProvider>
-    <CharacterProvider>
-      <App />
-    </CharacterProvider>
-  </SettingsProvider>,
+  <ItemsProvider>
+    <SettingsProvider>
+      <CharacterProvider>
+        <App />
+      </CharacterProvider>
+    </SettingsProvider>
+  </ItemsProvider>,
 );

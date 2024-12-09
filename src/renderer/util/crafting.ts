@@ -1,22 +1,22 @@
-import { evoItems } from '../../constants/items';
+import { TItem } from "../../types";
 
 export type DependencyObj = {
   [key: string]: number
 }
 
-export const getItemArrFlatDependenciesObject = (items: string[], presentItems: string[] = []): [DependencyObj, string[]] =>  {
+export const getItemArrFlatDependenciesObject = (items: string[], presentItems: string[] = [], itemsDict: {[key: string]: TItem}): [DependencyObj, string[]] =>  {
   let res: DependencyObj = {};
   let stash: string[] = presentItems;
 
   for (const item of items) {
-    const [tempItems, tempStash] = getItemFlatDependenciesObject(item, stash);
+    const [tempItems, tempStash] = getItemFlatDependenciesObject(item, stash, itemsDict);
     res = addDependencies(res, tempItems);
     stash = tempStash;
   }
 
   return [res, stash];
 }
-export const getItemFlatDependenciesObject = (item: string, presentItems: string[] = []): [DependencyObj, string[]] =>  {
+export const getItemFlatDependenciesObject = (item: string, presentItems: string[] = [], itemsDict: {[key: string]: TItem}): [DependencyObj, string[]] =>  {
   let res: DependencyObj  = {};
   let items:Array<string> = presentItems;
 
@@ -27,7 +27,7 @@ export const getItemFlatDependenciesObject = (item: string, presentItems: string
       return;
     }
 
-    if (!evoItems.hasOwnProperty(curr) || !evoItems[curr].crafting || evoItems[curr].crafting?.length === 0) {
+    if (!itemsDict.hasOwnProperty(curr) || itemsDict[curr].recipe.length === 0) {
       if (res.hasOwnProperty(curr)) {
         res[curr] += 1;
       } else {

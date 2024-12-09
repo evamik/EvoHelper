@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Class {
+  id   Int    @id @default(autoincrement())
+  name String
+  tier Int
+}
+
+model Item {
+  id            String          @id @unique
+  name          String
+  icon          String
+  legacyItem    Boolean         @default(false)
+  description   String?
+  effects       String?
+  recipe        Item[] @relation("ItemRecipes")
+  partOf        Item[] @relation("ItemRecipes")
+  rarity        ItemRarity      @relation(fields: [rarityId], references: [id])
+  rarityId      Int
+  restriction   ItemRestriction @relation(fields: [restrictionId], references: [id])
+  restrictionId Int
+  source        String?
+  sourceShort   String?
+}
+
+model ItemRestriction {
+  id    Int    @id @default(autoincrement())
+  name  String
+  items Item[]
+}
+
+model ItemRarity {
+  id    Int    @id @unique
+  name  String
+  color String
+  items Item[]
+}

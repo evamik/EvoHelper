@@ -259,48 +259,58 @@
   dependencies:
     regenerator-runtime "^0.13.3"
 
-"@nut-tree/default-clipboard-provider@4.3.0":
-  version "4.3.0"
-  resolved "https://pkg.nutjs.dev/@nut-tree/default-clipboard-provider/-/default-clipboard-provider-4.3.0.tgz#0cfb9c1b92f983ad133b9bb842813c2f791b1fb7"
-  integrity sha512-Hgl0dBSZZ9/sF8lp1X71GBqjVRhNR2Lvp59uUMgH77uj4g0SUBb7CyGVEjn9Hmqu9TgNNsS4w1a7NfdB0kcGaA==
+"@nut-tree/default-clipboard-provider@4.5.0":
+  version "4.5.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/default-clipboard-provider/-/default-clipboard-provider-4.5.0.tgz#1bb13411fcdc33189d09b05078a40e7019367b82"
+  integrity sha512-YS0JG+Gxt0WzUBj6xb+qX8WxABUKP+/aw8Ew+ITw3VOPT6h7yzLKT/tD3sjc6GYz0D7eVI4s6hm35AAsaI9BGA==
   dependencies:
     clipboardy "2.3.0"
 
-"@nut-tree/libnut-darwin@2.7.2":
-  version "2.7.2"
-  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-darwin/-/libnut-darwin-2.7.2.tgz#e9c4a5b8702cfa18ebba13dabc450c3c1caf593f"
-  integrity sha512-D8xFdWpPA/YzPsgwPyUkTg/ng/gctj661hQhhH8/eojIgd+SIL/l430vd6mLTeJPT+GuILhbkY5w+bDzuajcMg==
+"@nut-tree/libnut-darwin-legacy-screencapture@2.8.0":
+  version "2.8.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-darwin-legacy-screencapture/-/libnut-darwin-legacy-screencapture-2.8.0.tgz#06b1799c8d3082a1838e3cc95c5f8b0d4b1512a1"
+  integrity sha512-h2eRBFU9jQ0l7ctmBhsY+dMUhN2tOGrSxR+Wmc6+Cwmfje0rQ2NGCcRI/QyhOSWrMWSdc//PcyZdHeBQFWiOzQ==
   dependencies:
     bindings "1.5.0"
   optionalDependencies:
     "@nut-tree/node-mac-permissions" "2.2.1"
 
-"@nut-tree/libnut-linux@2.7.2":
-  version "2.7.2"
-  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-linux/-/libnut-linux-2.7.2.tgz#38be936ba1e6e4ea253556671009f9b13aaee51c"
-  integrity sha512-gUUb9716zTJFWm9ihKaxGVwqp83IImSlIv0eIu7q1XAI8046ybeoNB6Uz6SDGfTCq2qk8AkkGeBneNH7hLzFrw==
+"@nut-tree/libnut-darwin@2.8.0":
+  version "2.8.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-darwin/-/libnut-darwin-2.8.0.tgz#e23ef6a3743e21c80b29914e4634c7bbded11cd2"
+  integrity sha512-Fd+gJBrTsf5RMbgTgeeHUykmV9j+v93T+K4FlttkZB+jvXyfa/d7avL2PCS9k9JvUBlt7gcQLee1S+y1reOquw==
   dependencies:
     bindings "1.5.0"
   optionalDependencies:
     "@nut-tree/node-mac-permissions" "2.2.1"
 
-"@nut-tree/libnut-win32@2.7.2":
-  version "2.7.2"
-  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-win32/-/libnut-win32-2.7.2.tgz#dcc286693f240acb3652f8e7b559b50c1da11538"
-  integrity sha512-Yyyj96zw+m4MWZnrDOcNp7vkznYdcs9btmhZsTmL+KnLlKhfOLr1puGzX/FkQLd15g/aDwHZfOL3Q1hOJAD7ug==
+"@nut-tree/libnut-linux@2.8.0":
+  version "2.8.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-linux/-/libnut-linux-2.8.0.tgz#3700037ed4cb15206fe415a98f6a788231338228"
+  integrity sha512-r1um271HLQ9zhV385pB0zUnwO6nM7xUEDi0YA2Hk7zv33RzXHq/JqJPjvXO65cM9Yn1PCXGXkxo7LfZKolT+Mw==
   dependencies:
     bindings "1.5.0"
   optionalDependencies:
     "@nut-tree/node-mac-permissions" "2.2.1"
 
-"@nut-tree/libnut@4.3.0":
-  version "4.3.0"
-  resolved "https://pkg.nutjs.dev/@nut-tree/libnut/-/libnut-4.3.0.tgz#a2ae543f9db4b9efbc67352c946e9f78e33e5a8b"
-  integrity sha512-Nbn4YHYl6gUhWF3bkzPKVys+g4qhz90ICr+meKPMgDkCAwVJhmjgjHwgJ6AgAyQ/7b6wliRxj4hqVnzYrOQH4w==
+"@nut-tree/libnut-win32@2.8.0":
+  version "2.8.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/libnut-win32/-/libnut-win32-2.8.0.tgz#86c58c9710a79d4628b046c1b2d0c785a1954fee"
+  integrity sha512-UoBK5xtLyMDJV8DAOYOr1/JgPTR0tYGjbxUqvwDw95QJKBiJdQu47junn1jTxg6cEdRHfcYzYa7FLUo2fdxn+A==
   dependencies:
-    "@nut-tree/libnut-darwin" "2.7.2"
-    "@nut-tree/libnut-linux" "2.7.2"
-    "@nut-tree/libnut-win32" "2.7.2"
+    bindings "1.5.0"
+  optionalDependencies:
+    "@nut-tree/node-mac-permissions" "2.2.1"
+
+"@nut-tree/libnut@4.5.0":
+  version "4.5.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/libnut/-/libnut-4.5.0.tgz#b9271be12449c0f7e3a0c5d22aae53056c6917f7"
+  integrity sha512-juL5FGaJryMUR5XUzZd+ToUAssjF6JiohiHSoAQvQOIoz5AvTnGZODuE9VRYjYAWbFcHPhr23OW0xCauREXo6A==
+  dependencies:
+    "@nut-tree/libnut-darwin" "2.8.0"
+    "@nut-tree/libnut-darwin-legacy-screencapture" "2.8.0"
+    "@nut-tree/libnut-linux" "2.8.0"
+    "@nut-tree/libnut-win32" "2.8.0"
 
 "@nut-tree/node-mac-permissions@2.2.1":
   version "2.2.1"
@@ -310,29 +320,31 @@
     bindings "1.5.0"
     node-addon-api "5.0.0"
 
-"@nut-tree/nut-js@4.3.0":
-  version "4.3.0"
-  resolved "https://pkg.nutjs.dev/@nut-tree/nut-js/-/nut-js-4.3.0.tgz#a8d15ae434bc9c48d94f1137ed1ec8f62e6d6f9d"
-  integrity sha512-yzEslWknSspSzc3760ZmQB1d0MXGbWUUWFXSuo6r0sfCJXq/OALQWduT4BlKlpX0wIxlWsOvPZn7JVnVtethig==
+"@nut-tree/nut-js@4.5.0":
+  version "4.5.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/nut-js/-/nut-js-4.5.0.tgz#3c1496fe519a92407be1d7b64eaec1de7abfe253"
+  integrity sha512-OPm0bsqQOyZPFrg+LIJ9+7hm7JoBm3pY5uhsmxwRooOQQf0k6wpyXu4ACu4H5GB9Th+jRHRN/TLM47FaXltz6A==
   dependencies:
-    "@nut-tree/default-clipboard-provider" "4.3.0"
-    "@nut-tree/libnut" "4.3.0"
-    "@nut-tree/provider-interfaces" "4.3.0"
-    "@nut-tree/shared" "4.3.0"
+    "@nut-tree/default-clipboard-provider" "4.5.0"
+    "@nut-tree/libnut" "4.5.0"
+    "@nut-tree/provider-interfaces" "4.5.0"
+    "@nut-tree/shared" "4.5.0"
     jimp "0.22.12"
     node-abort-controller "3.1.1"
+    typed-emitter "2.1.0"
 
-"@nut-tree/provider-interfaces@4.3.0":
-  version "4.3.0"
-  resolved "https://pkg.nutjs.dev/@nut-tree/provider-interfaces/-/provider-interfaces-4.3.0.tgz#4a84d97aa431a4ac406bcde681657c0093b7e8f3"
-  integrity sha512-oVpFVjXIzyxTP6Y/26aaYXk86oTyRcKbI0lRTCnvATWUx6eM9kpIbIwgznYBzzFMePQOT5cV/6jxu3enGr8P0w==
+"@nut-tree/provider-interfaces@4.5.0":
+  version "4.5.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/provider-interfaces/-/provider-interfaces-4.5.0.tgz#88e099bddd26f76fa7ea63929950d4a544b4f6b1"
+  integrity sha512-xjEZSUCKRgBAz7mrNN9nPUJaIf7qDnJmMxSqstayU8uret+iOEYAo/lorP2GSqo+V6u9H60EUXfue7NvFpXZZQ==
   dependencies:
-    "@nut-tree/shared" "4.3.0"
+    "@nut-tree/shared" "4.5.0"
+    typed-emitter "2.1.0"
 
-"@nut-tree/shared@4.3.0":
-  version "4.3.0"
-  resolved "https://pkg.nutjs.dev/@nut-tree/shared/-/shared-4.3.0.tgz#aeab5691df336baf7228fa2cdf034b40a387cf8a"
-  integrity sha512-Zk8/62cENFPxk9IEUm5eNzpDpd4jD5k9GgdK5bq7a7vNA0PjRNoFFDO/DN6Xx0wKf5SD2AuUlVInEwzOmrGQtA==
+"@nut-tree/shared@4.5.0":
+  version "4.5.0"
+  resolved "https://pkg.nutjs.dev/@nut-tree/shared/-/shared-4.5.0.tgz#e0873210900d5cef940d7becb4147fba08c3a41a"
+  integrity sha512-cRfoQ/1J2xFhSrgNJunBm394jS9gSq1juf9RdxWarS2E0R0fm9Gkpzu8ZOf37hayQ3ZeE77Nar9IPFiSD9yleQ==
   dependencies:
     jimp "0.22.12"
     node-abort-controller "3.1.1"
@@ -707,6 +719,13 @@ regenerator-runtime@^0.13.3:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
   integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
 
+rxjs@^7.5.2:
+  version "7.8.1"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
+  integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
+  dependencies:
+    tslib "^2.1.0"
+
 safe-buffer@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
@@ -781,6 +800,18 @@ tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
+
+tslib@^2.1.0:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
+  integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
+
+typed-emitter@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/typed-emitter/-/typed-emitter-2.1.0.tgz#ca78e3d8ef1476f228f548d62e04e3d4d3fd77fb"
+  integrity sha512-g/KzbYKbH5C2vPkaXGu8DJlHrGKHLsM25Zg9WuC9pMGfuvT+X25tZQWo5fK1BjBm8+UrVE9LDCvaY0CQk+fXDA==
+  optionalDependencies:
+    rxjs "^7.5.2"
 
 utif2@^4.0.1:
   version "4.1.0"

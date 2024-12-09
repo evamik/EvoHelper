@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
-import { useSettingsContext } from '../../settingsContext';
+import { useSettingsContext } from '../contexts/settingsContext';
 
 export default function Settings() {
   const {

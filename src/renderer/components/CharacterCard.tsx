@@ -3,16 +3,16 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
-import { Class } from '../../main/load';
-import { useCharacterContext } from '../../context';
+import { useCharacterContext } from '../contexts/characterContext';
 import { EvoStash } from './Stash';
 import { Button } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { useSettingsContext } from '../../settingsContext';
+import { useSettingsContext } from '../contexts/settingsContext';
+import { IClassLoad } from '../../types';
 
 interface CharacterCardProps {
-  character: Class;
+  character: IClassLoad;
   favourite?: boolean;
   accountURL: string;
 }

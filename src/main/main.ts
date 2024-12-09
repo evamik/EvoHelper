@@ -10,15 +10,32 @@
  */
 import path from 'path';
 import { app, BrowserWindow, shell, ipcMain, globalShortcut } from 'electron';
-import fs from 'fs/promises';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 import { loadTevefData } from './load';
+import { Prisma, PrismaClient } from '@prisma/client'
 import { executeCommand } from './dirt/keyboard';
-import { armFishing, stopFishingAndUnregisterHotkeys } from './fishing';
+import { armFishing, stopFishingAndUnregisterHotkeys } from './services/fishing';
 import { parseLastRun } from './lastrun';
+import { createClassesService } from './services/classes';
+import { createItemsService } from './services/items';
+import { createSettingsService } from './services/settings';
 
 let mainWindow: BrowserWindow | null = null;
+
+const DB_PATH = (process.env.NODE_ENV === 'development') ? 'file:./dev.db' : 'file:' + path.join(app.getAppPath(), "../prisma/dev.db");
+
+export const prismaClient = new PrismaClient({
+  datasources: {
+    db: {
+      url: DB_PATH
+    }
+  }
+})
+
+const settingsService = createSettingsService(app.getPath.bind(app))
+const classesService = createClassesService(prismaClient)
+const itemsService = createItemsService(prismaClient)
 
 ipcMain.on('loadData', async (event, arg) => {
   const data = await loadTevefData(arg);
@@ -41,31 +58,22 @@ ipcMain.on('load', async (event, arg) => {
 ipcMain.on('fishing_arm', async (_, arg) => {
   armFishing(arg.hotkey, arg.up, arg.down, arg.delay, arg.isAutosave);
 });
+
 ipcMain.on('fishing_disarm', async () => {
   stopFishingAndUnregisterHotkeys();
 });
 
 ipcMain.on('settings_read', async (event) => {
-  try {
-    const settings = await fs.readFile(
-      path.join(app.getPath('userData'), 'settings.json'),
-      'utf-8',
-    );
-    const json = JSON.parse(settings);
-    const defaultWc3Path = path.join(app.getPath('documents'), 'Warcraft III');
-    if (!json.wc3path) {
-      json.wc3path = defaultWc3Path;
-    }
-
-    event.reply('settings_read', json);
-  } catch (e) {
-    // smth went wrong, return default settings
-    event.reply('settings_read', {
-      wc3path: path.join(app.getPath('documents'), 'Warcraft III'),
-    });
-    return;
-  }
+  event.reply('settings_read', await settingsService.getSettings())
 });
+
+ipcMain.on('get_all_classes', async (event) => {
+  event.reply('get_all_classes', await classesService.getAllClasses())
+})
+
+ipcMain.on('get_all_items', async (event) => {
+  event.reply('get_all_items', await itemsService.getAllItemsDict());
+})
 
 ipcMain.on('request_last_run', async (event, arg) => {
   const data = await parseLastRun(arg);
@@ -73,16 +81,11 @@ ipcMain.on('request_last_run', async (event, arg) => {
 });
 
 ipcMain.on('settings_write', async (event, arg) => {
-  try {
-    await fs.writeFile(
-      path.join(app.getPath('userData'), 'settings.json'),
-      JSON.stringify(arg),
-    );
-    event.reply('settings_write', true);
-  } catch (e) {
-    event.reply('settings_write', false);
-  }
-});
+    const res = await settingsService.writeSettings(arg);
+    // we expect boolean on the other side, true means success.
+    // should change it probably
+    event.reply('settings_write', !res);
+})
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -124,8 +127,8 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: 1200,
+    height: 700,
     icon: getAssetPath('icon.png'),
     webPreferences: {
       preload: app.isPackaged

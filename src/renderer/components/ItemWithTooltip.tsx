@@ -2,12 +2,13 @@ import { FC } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import { grey } from '@mui/material/colors';
-import { evoItems } from '../../constants/items';
 import ItemCard from './ItemCard';
-import { iconFromId } from '../../icons/icons';
+import { iconFromId } from '../icons/icons';
 import { useNavigate } from 'react-router-dom';
+import { useItemContext } from '../contexts/itemsContext';
 
 export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id, onClick }) => {
+  const { items } = useItemContext();
   const navigate = useNavigate();
   if (!id) {
     return (
@@ -16,7 +17,7 @@ export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id,
       </Avatar>
     );
   }
-  if (!evoItems.hasOwnProperty(id)) {
+  if (!items.hasOwnProperty(id)) {
     return (
       <Tooltip sx={{ boxShadow: 3 }} title={id} placement="right-start">
         <Avatar sx={{ bgcolor: grey[500] }} variant="rounded">
@@ -30,13 +31,13 @@ export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id,
       sx={{
         boxShadow: 3
       }}
-      title={<ItemCard id={id} item={evoItems[id as keyof typeof evoItems]} />}
+      title={<ItemCard id={id} item={items[id]} />}
       placement="right-start"
     >
       <Avatar
         sx={{ cursor: 'pointer' }}
         variant="rounded"
-        src={iconFromId(evoItems[id as keyof typeof evoItems].icon)}
+        src={iconFromId(items[id].icon)}
         onClick={() => navigate(`/item/${id}`)}
       />
     </Tooltip>

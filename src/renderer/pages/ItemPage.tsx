@@ -1,14 +1,15 @@
 import { Link, useParams } from 'react-router-dom';
-import { evoItems } from '../../constants/items';
 import { EvoItem } from '../components/Item';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import { useItemContext } from '../contexts/itemsContext';
 
 export function ItemPage() {
   const { id } = useParams();
-  if (!id || !evoItems.hasOwnProperty(id)) {
+  const { items } = useItemContext();
+  if (!id || !items.hasOwnProperty(id)) {
     return <h2>How did you end up here?</h2>
   }
   
@@ -20,10 +21,7 @@ export function ItemPage() {
         <ArrowBackIcon />
         <Typography variant="caption"/>
       </IconButton>
-      <EvoItem item={
-        // @ts-ignore
-        evoItems[id]
-      }/>
+      <EvoItem item={items[id]}/>
     </div>
   );
 }

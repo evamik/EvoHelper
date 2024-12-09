@@ -7,10 +7,10 @@ import { ItemIconAndTitle } from './Item';
 import { lightBlue } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import { evoItems } from '../../constants/items';
 import { useMemo, useState } from 'react';
 import { DependencyObj, getItemArrFlatDependenciesObject } from '../util/crafting';
-import { godlyItems } from "../../constants/items/forging/godly";
+import { useItemContext } from '../contexts/itemsContext';
+
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -27,33 +27,35 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export const GodlyProgress = ({ items }: { items: Array<any>}) => {
+export const GodlyProgress = ({ itemIdsList }: { itemIdsList: Array<string>}) => {
   const [expanded, setExpanded] = useState(false);
+  const { items } = useItemContext();
 
   const isGodlyFinished = useMemo(() => {
-    if (!items || !Array.isArray(items)) {
+    if (!itemIdsList || !Array.isArray(itemIdsList)) {
       return true;
     }
 
-    for (const item of items) {
-      if (godlyItems.hasOwnProperty(item)) {
+    for (const id of itemIdsList) {
+      if (items && items[id]) {
         return true;
       }
     }
 
     return false;
-  }, [items]);
+  }, [itemIdsList]);
 
   const [missingForGodly, _] = useMemo (() => {
-    if (!items || !Array.isArray(items) || isGodlyFinished) {
+    if (!itemIdsList || !Array.isArray(itemIdsList) || isGodlyFinished) {
       return [{ }, []] as [DependencyObj, string[]];
     } else {
       return getItemArrFlatDependenciesObject(
         ['Twilight', 'Eve'],
+        itemIdsList,
         items
       )
     }
-  }, [items, isGodlyFinished]);
+  }, [itemIdsList, isGodlyFinished]);
 
 
   const handleExpandClick = () => {
@@ -91,10 +93,10 @@ export const GodlyProgress = ({ items }: { items: Array<any>}) => {
   )
 }
 
-
 function MissingItem(props: {id: string, amount: number}) {
   const { id, amount } = props;
-  const item = evoItems[id as keyof typeof evoItems];
+  const { items } = useItemContext();
+  const item = items[id];
 
   if (!item) {
     return (
@@ -103,6 +105,7 @@ function MissingItem(props: {id: string, amount: number}) {
       </Typography>
     );
   }
+  
   return (
     <Box sx={{display:'flex', flexDirection:'row', alignItems: 'center', justifyContent: 'space-between'}}>
       <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>

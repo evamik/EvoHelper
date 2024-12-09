@@ -1,21 +1,22 @@
 import Box, { BoxProps } from '@mui/material/Box';
-import { EvoItem } from '../../constants/items/item';
-import { iconFromId } from '../../icons/icons';
-import { evoRarity } from '../../constants/rarity';
+import { iconFromId } from '../icons/icons';
 import Typography from '@mui/material/Typography';
 import { TreeView } from '@mui/x-tree-view/TreeView';
 import { TreeItem } from '@mui/x-tree-view/TreeItem';
 import { grey, lightBlue } from '@mui/material/colors';
-import { evoItemRestrictions } from '../../constants/restrictions';
-import { evoItems } from '../../constants/items';
+
 import Avatar from '@mui/material/Avatar';
+import { useItemContext } from '../contexts/itemsContext';
+import { TItem } from '../../types';
 
 interface EvoItemProps extends BoxProps {
-  item: EvoItem
+  item: TItem
 }
+
 export function EvoItem(props: EvoItemProps) {
-  const {item, sx,...rest} = props;
-  const { color } = evoRarity[item.rarity];
+  const { item, sx,...rest } = props;
+  const { color } = item.rarity;
+
   return (
     <Box {...rest} sx={{ maxWidth: '600px'}}>
       <Box sx={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}>
@@ -27,7 +28,7 @@ export function EvoItem(props: EvoItemProps) {
             {item.id}
           </Typography>
           <Typography variant="subtitle2" color={lightBlue[300]}>
-            {evoItemRestrictions[item.restriction]}
+            {item.restriction}
           </Typography>
         </Box>
       </Box>
@@ -43,15 +44,15 @@ export function EvoItem(props: EvoItemProps) {
   )
 }
 
-function ItemDependenciesTree(props: {item: EvoItem}) {
+function ItemDependenciesTree(props: {item: TItem}) {
   const { item } = props;
-  if (!item.crafting || item.crafting.length === 0) return null;
+  if (item.recipe.length === 0) return null;
   return (
     <Box sx={{ width: '500px', paddingTop: '15px'}}>
       <Typography variant="h6">Crafting</Typography>
       <TreeView sx={{ paddingTop: '15px' }}>
         {
-          item.crafting?.map((craftingId: string) => (
+          item.recipe.map((craftingId: string) => (
             <ItemDependency key={craftingId} index={item.id} id={craftingId} />
           ))
         }
@@ -61,8 +62,9 @@ function ItemDependenciesTree(props: {item: EvoItem}) {
 }
 
 function ItemDependency(props: {id: string; index: string;}) {
+  const { items } = useItemContext();
   const { id, index } = props;
-  const item = evoItems[id as keyof typeof evoItems];
+  const item = items[id];
   const newIndex = index + '_' + id;
 
   if (!item) {
@@ -87,20 +89,20 @@ function ItemDependency(props: {id: string; index: string;}) {
         </Box>
       }>
       {
-        item.crafting?.map((craftingId, index) => (
-          <ItemDependency key={newIndex + craftingId + '_' + index} index={newIndex} id={craftingId} />
+        item.recipe.map((id, index) => (
+          <ItemDependency key={newIndex + id + '_' + index} index={newIndex} id={id} />
         ))
       }
     </TreeItem>
   )
 }
 
-export function ItemIconAndTitle (props: {item: EvoItem}) {
+export function ItemIconAndTitle (props: {item: TItem}) {
   const { item } = props;
   return (
     <Box sx={{display:'flex', flexDirection:'row', alingItems: 'center'}}>
       <Avatar sx={{ bgcolor: grey[500], marginRight: '10px' }} variant="rounded" src={iconFromId(item.icon)}/>
-      <Typography variant="body2" sx={{ color: evoRarity[item.rarity] }}>{item.id}</Typography>
+      <Typography variant="body2" sx={{ color: item.rarity.color }}>{item.id}</Typography>
     </Box>
   )
 }

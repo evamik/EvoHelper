@@ -8,10 +8,10 @@ import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Settings from './pages/Settings';
-import { Character } from './components/Character';
 import theme from './theme';
-import { useCharacterContext } from '../context';
+import { useCharacterContext } from './contexts/characterContext';
 import { ItemsPage } from './pages/ItemsPage';
+import { CharacterPage } from './pages/CharacterPage';
 import { LoaderPage } from './pages/LoaderPage';
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
@@ -47,7 +47,7 @@ export default function App() {
                   alignItems: 'center',
                 }}
               >
-                <Typography>Evo Helper 1.0.2</Typography>
+                <Typography>Evo Helper 1.1.0</Typography>
                 <IconButton onClick={loadClasses}>
                   <CachedIcon />
                 </IconButton>
@@ -92,7 +92,7 @@ export default function App() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/fishing" element={<FishingPage />} />
               <Route path="/lastruninfo" element={<LastRunInfoPage />} />
-              <Route path="/character/:accountURL/:id" element={<Character />} />
+              <Route path="/character/:accountURL/:id" element={<CharacterPage />} />
             </Routes>
             </Box>
           </Box>

@@ -1,6 +1,6 @@
 {
   "name": "evohelper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": {
     "name": "ArgentumHeart",
     "url": "https://github.com/ArgentumHeart/EvoHelper"
@@ -12,6 +12,6 @@
     "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
   },
   "dependencies": {
-    "@nut-tree/nut-js": "4.3.0"
+    "@nut-tree/nut-js": "4.5.0"
   }
 }
