@@ -37,9 +37,7 @@ export const GodlyProgress = ({ itemIdsList }: { itemIdsList: Array<string>}) =>
     }
 
     for (const id of itemIdsList) {
-      if (items && items[id]) {
-        return true;
-      }
+        if (items && items[id] && items[id].godlyCraft) return true
     }
 
     return false;

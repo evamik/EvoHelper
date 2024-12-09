@@ -36,9 +36,7 @@ export const getItemFlatDependenciesObject = (item: string, presentItems: string
       return;
     }
 
-    // TS, pls tell how crafting can be undefined?
-    //@ts-ignore
-    for (const dep of evoItems[curr].crafting) {
+    for (const dep of itemsDict[curr].recipe) {
       traverse(dep);
     }
   }
