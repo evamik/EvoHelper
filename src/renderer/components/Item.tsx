@@ -8,6 +8,7 @@ import { grey, lightBlue } from '@mui/material/colors';
 import Avatar from '@mui/material/Avatar';
 import { useItemContext } from '../contexts/itemsContext';
 import { TItem } from '../../types';
+import { EvoItemRenderer } from './ItemWithTooltip';
 
 interface EvoItemProps extends BoxProps {
   item: TItem
@@ -40,6 +41,7 @@ export function EvoItem(props: EvoItemProps) {
         </Typography>
       ))}
       <ItemDependenciesTree item={item} />
+      <CraftsIntoItemList item={item} />
     </Box>
   )
 }
@@ -57,6 +59,21 @@ function ItemDependenciesTree(props: {item: TItem}) {
           ))
         }
       </TreeView>
+    </Box>
+  )
+}
+
+function CraftsIntoItemList(props: {item: TItem}) {
+  const { item } = props;
+  if (item.partOf?.length === 0) return null;
+  return (
+    <Box sx={{ width: '500px', paddingTop: '15px'}}>
+      <Typography variant="h6">Crafts into</Typography>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
+          {item.partOf?.map((id) => (
+            <EvoItemRenderer key={id} id={id} />
+          ))}
+        </Box>
     </Box>
   )
 }
