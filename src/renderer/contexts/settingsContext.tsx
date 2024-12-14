@@ -101,9 +101,11 @@ export const SettingsProvider: FC<PropsWithChildren> = ({ children }) => {
         arg.hasOwnProperty('favouriteClasses') && setFavouriteClasses(arg.favouriteClasses);
       }
     });
+
     window.electron.ipcRenderer.sendMessage('settings_read');
   }, []);
 
+  if (!wc3path) return null;
 
   return (
     <SettingsContext.Provider value={value}>

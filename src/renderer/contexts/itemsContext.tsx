@@ -11,7 +11,6 @@ export const ItemsContext = createContext({} as ItemsContext);
 
 export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     const [items, setItems] = useState({});
-
     // calling it once for now
     useEffect(() => {
         window.electron.ipcRenderer.on('get_all_items', (arg: any) => {

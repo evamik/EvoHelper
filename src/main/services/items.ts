@@ -20,6 +20,7 @@ export function createItemsService (prismaClient: PrismaClient) {
             godlyCraft: recipe.indexOf('Twilight') !== -1 // dirtiest hack, but it works.
         }
     }
+
     const include = {
         recipe: true,
         partOf: true,
@@ -28,6 +29,19 @@ export function createItemsService (prismaClient: PrismaClient) {
     }
 
     return {
+        async getUnformattedItemById(id: string) {
+            const item = await prismaClient.item.findUnique({
+                include,
+                where: {
+                    id: id
+                }
+            })
+
+            if (!item) return null;
+            
+            return item;
+        },
+
         async getItemById(id: string) {
             const item = await prismaClient.item.findUnique({
                 include,

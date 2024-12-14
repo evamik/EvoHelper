@@ -16,10 +16,10 @@ import { LoaderPage } from './pages/LoaderPage';
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
 import { LastRunInfoPage } from './pages/LastRunInfoPage';
+import { useEffect } from 'react';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
-  loadClasses();
 
   return (
     <Router initialEntries={[ '/characters' ]}>

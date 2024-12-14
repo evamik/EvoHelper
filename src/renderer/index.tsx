@@ -11,11 +11,11 @@ import { ItemsProvider } from './contexts/itemsContext';
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
 root.render(
-  <ItemsProvider>
-    <SettingsProvider>
+  <SettingsProvider>
+    <ItemsProvider>
       <CharacterProvider>
         <App />
       </CharacterProvider>
-    </SettingsProvider>
-  </ItemsProvider>,
+    </ItemsProvider>
+  </SettingsProvider>,
 );

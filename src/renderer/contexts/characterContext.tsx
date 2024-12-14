@@ -98,6 +98,7 @@ export const CharacterProvider: FC<PropsWithChildren> = ({ children }) => {
       setClassesList(arg);
     });
     window.electron.ipcRenderer.sendMessage('get_all_classes');
+
   }, []);
 
   return (
