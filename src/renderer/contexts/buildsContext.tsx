@@ -9,7 +9,7 @@ import {
 } from 'react';
 
 export interface TBuild {
-  id: number;
+  id: number | null;
   name: string;
   items: string[];
 }
@@ -57,11 +57,8 @@ export const BuildsProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const saveBuild = (build: TBuild) => {
+    console.log('saveBuild', build);
     window.electron.ipcRenderer.sendMessage('save_build', build);
-    setBuildsState({
-      ...builds,
-      [build.id]: build,
-    });
   };
 
   const saveSelectedBuild = (
@@ -73,13 +70,6 @@ export const BuildsProvider: FC<PropsWithChildren> = ({ children }) => {
       playerName,
       playerClass: hero,
       buildId,
-    });
-    setSelectedBuilds({
-      ...selectedBuilds,
-      [playerName]: {
-        ...selectedBuilds[playerName],
-        [hero]: buildId,
-      },
     });
   };
 

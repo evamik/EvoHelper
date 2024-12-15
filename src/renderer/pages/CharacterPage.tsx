@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Tooltip from '@mui/material/Tooltip';
 import { GodlyProgress } from '../feature/item/components/GodlyProgress';
+import { BackButton } from '../components/BackButton';
 
 export const CharacterPage: FC = () => {
   const { getCharacter, onLoadClick } = useCharacterContext();
@@ -22,14 +23,13 @@ export const CharacterPage: FC = () => {
     return null;
   }
 
-  const items = character ? [...character.inventory, ...character.stashes.flat()] : null;
+  const items = character
+    ? [...character.inventory, ...character.stashes.flat()]
+    : null;
 
   return (
     <div>
-      <IconButton style={{ left: -10 }} component={Link} to={`/characters/${accountURL}`}>
-        <ArrowBackIcon />
-        <Typography variant="caption">Go back</Typography>
-      </IconButton>
+      <BackButton />
       <Typography variant="h6">
         {character.hero} {character.level && ` - ${character.level} level`}
       </Typography>
@@ -68,7 +68,7 @@ export const CharacterPage: FC = () => {
         </Grid>
       </Grid>
 
-      <Divider sx={{ marginTop: '10px', marginBottom: '10px' }}/>
+      <Divider sx={{ marginTop: '10px', marginBottom: '10px' }} />
 
       {items && <GodlyProgress itemIdsList={items} />}
 
@@ -79,25 +79,25 @@ export const CharacterPage: FC = () => {
           alignItems: 'center',
         }}
       >
-        <Button
-          variant="contained"
-          onClick={() => onLoadClick(character)}
-        >
+        <Button variant="contained" onClick={() => onLoadClick(character)}>
           Load
         </Button>
         <Tooltip
-          sx={{ marginLeft: '15px'}}
+          sx={{ marginLeft: '15px' }}
           title={
-          <Box>
-            <Typography variant="body2">Press Load - it will set hotkey for A button.</Typography>
-            <Typography variant="body2">Head to wc3 and press A.</Typography>
-            <Typography variant="body2">Let it do its thing.</Typography>
-            <Typography variant="caption">
-              Tip: remember to turn off caps lock and switch to English
-            </Typography>
-        </Box>
-        }>
-          <InfoIcon color="primary"/>
+            <Box>
+              <Typography variant="body2">
+                Press Load - it will set hotkey for A button.
+              </Typography>
+              <Typography variant="body2">Head to wc3 and press A.</Typography>
+              <Typography variant="body2">Let it do its thing.</Typography>
+              <Typography variant="caption">
+                Tip: remember to turn off caps lock and switch to English
+              </Typography>
+            </Box>
+          }
+        >
+          <InfoIcon color="primary" />
         </Tooltip>
       </Box>
     </div>
