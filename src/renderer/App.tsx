@@ -16,13 +16,15 @@ import { LoaderPage } from './pages/LoaderPage';
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
 import { LastRunInfoPage } from './pages/LastRunInfoPage';
+import { BuildPage } from './pages/BuildPage';
+import { BuildsPage } from './pages/BuildsPage';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
   loadClasses();
 
   return (
-    <Router initialEntries={[ '/characters' ]}>
+    <Router initialEntries={['/characters']}>
       <ThemeProvider theme={theme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
@@ -59,6 +61,9 @@ export default function App() {
                 <MenuItem component={Link} to="/items">
                   Items
                 </MenuItem>
+                <MenuItem component={Link} to="/builds">
+                  Builds
+                </MenuItem>
                 <MenuItem component={Link} to="/fishing">
                   Fishing
                 </MenuItem>
@@ -85,15 +90,23 @@ export default function App() {
             }}
           >
             <Box sx={{ maxWidth: '105ch' }}>
-            <Routes>
-              <Route path="/items" element={<ItemsPage/>}/>
-              <Route path="/item/:id" element={<ItemPage/>}/>
-              <Route path="/characters/:accountURL?" element={<LoaderPage />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/fishing" element={<FishingPage />} />
-              <Route path="/lastruninfo" element={<LastRunInfoPage />} />
-              <Route path="/character/:accountURL/:id" element={<CharacterPage />} />
-            </Routes>
+              <Routes>
+                <Route path="/items" element={<ItemsPage />} />
+                <Route path="/item/:id" element={<ItemPage />} />
+                <Route path="/builds" element={<BuildsPage />} />
+                <Route path="/build/:id" element={<BuildPage />} />
+                <Route
+                  path="/characters/:accountURL?"
+                  element={<LoaderPage />}
+                />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/fishing" element={<FishingPage />} />
+                <Route path="/lastruninfo" element={<LastRunInfoPage />} />
+                <Route
+                  path="/character/:accountURL/:id"
+                  element={<CharacterPage />}
+                />
+              </Routes>
             </Box>
           </Box>
         </Box>

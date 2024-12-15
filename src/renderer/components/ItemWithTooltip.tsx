@@ -7,7 +7,11 @@ import { iconFromId } from '../icons/icons';
 import { useNavigate } from 'react-router-dom';
 import { useItemContext } from '../contexts/itemsContext';
 
-export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id, onClick }) => {
+export const EvoItemRenderer: FC<{
+  id?: string;
+  onClick?: (id: string) => void;
+  playerItems?: string[] | null;
+}> = ({ id, onClick, playerItems }) => {
   const { items } = useItemContext();
   const navigate = useNavigate();
   if (!id) {
@@ -26,10 +30,22 @@ export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id,
       </Tooltip>
     );
   }
+
+  const handleClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    if (onClick) {
+      onClick(id);
+    } else {
+      navigate(`/item/${id}`, {
+        state: { playerItems: [...(playerItems || [])] },
+      });
+    }
+  };
+
   return (
     <Tooltip
       sx={{
-        boxShadow: 3
+        boxShadow: 3,
       }}
       title={<ItemCard id={id} item={items[id]} />}
       placement="right-start"
@@ -38,7 +54,7 @@ export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id,
         sx={{ cursor: 'pointer' }}
         variant="rounded"
         src={iconFromId(items[id].icon)}
-        onClick={() => navigate(`/item/${id}`)}
+        onClick={handleClick}
       />
     </Tooltip>
   );

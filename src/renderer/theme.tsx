@@ -11,16 +11,16 @@ export const themeConfig: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      "50": "#fafafa",
-      "100": "#f5f5f5",
-      "200": "#e5e5e5",
-      "300": "#d4d4d4",
-      "400": "#a3a3a3",
-      "500": "#737373",
-      "600": "#525252",
-      "700": "#404040",
-      "800": "#262626",
-      "900": "#171717"
+      '50': '#fafafa',
+      '100': '#f5f5f5',
+      '200': '#e5e5e5',
+      '300': '#d4d4d4',
+      '400': '#a3a3a3',
+      '500': '#737373',
+      '600': '#525252',
+      '700': '#404040',
+      '800': '#262626',
+      '900': '#171717',
     },
     background: {
       paper: grey[900],
@@ -36,6 +36,27 @@ export const themeConfig: ThemeOptions = {
       styleOverrides: {
         tooltip: {
           background: '#141D28',
+        },
+        arrow: {
+          color: '#141D28',
+        },
+      },
+    },
+    MuiSnackbarContent: {
+      styleOverrides: {
+        root: {
+          backgroundColor: grey[700],
+          color: 'white',
+          minWidth: 'fit-content',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          '&.MuiSnackbarContent-root': {
+            minWidth: 'fit-content',
+          },
         },
       },
     },

@@ -25,6 +25,10 @@ const ItemCard: FC<{ item: TItem; id: string }> = ({ item, id }) => {
           {effect}
         </Typography>
       ))}
+      <Divider />
+      <Typography variant="body2" color={lightBlue[300]}>
+        {item.source} {item.sourceShort && `(${item.sourceShort})`}
+      </Typography>
     </>
   );
 };

@@ -7,6 +7,7 @@ import '@fontsource/roboto/700.css';
 import { CharacterProvider } from './contexts/characterContext';
 import { SettingsProvider } from './contexts/settingsContext';
 import { ItemsProvider } from './contexts/itemsContext';
+import { BuildsProvider } from './contexts/buildsContext';
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
@@ -14,7 +15,9 @@ root.render(
   <ItemsProvider>
     <SettingsProvider>
       <CharacterProvider>
-        <App />
+        <BuildsProvider>
+          <App />
+        </BuildsProvider>
       </CharacterProvider>
     </SettingsProvider>
   </ItemsProvider>,

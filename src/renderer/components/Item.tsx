@@ -11,19 +11,20 @@ import { TItem } from '../../types';
 import { EvoItemRenderer } from './ItemWithTooltip';
 
 interface EvoItemProps extends BoxProps {
-  item: TItem
+  item: TItem;
+  onItemSelect?: (id: string) => void;
 }
 
 export function EvoItem(props: EvoItemProps) {
-  const { item, sx,...rest } = props;
+  const { item, onItemSelect, sx, ...rest } = props;
   const { color } = item.rarity;
 
   return (
-    <Box {...rest} sx={{ maxWidth: '600px'}}>
-      <Box sx={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}>
-        <img
-          src={iconFromId(item.icon)} width={64} height={64}
-        />
+    <Box {...rest} sx={{ maxWidth: '400px' }}>
+      <Box
+        sx={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}
+      >
+        <img src={iconFromId(item.icon)} width={64} height={64} />
         <Box sx={{ paddingLeft: '10px' }}>
           <Typography variant="subtitle1" color={color}>
             {item.id}
@@ -41,44 +42,49 @@ export function EvoItem(props: EvoItemProps) {
         </Typography>
       ))}
       <ItemDependenciesTree item={item} />
-      <CraftsIntoItemList item={item} />
+      <CraftsIntoItemList item={item} onItemSelect={onItemSelect} />
     </Box>
-  )
+  );
 }
 
-function ItemDependenciesTree(props: {item: TItem}) {
+function ItemDependenciesTree(props: { item: TItem }) {
   const { item } = props;
   if (item.recipe.length === 0) return null;
   return (
-    <Box sx={{ width: '500px', paddingTop: '15px'}}>
+    <Box sx={{ width: '400px', paddingTop: '15px' }}>
       <Typography variant="h6">Crafting</Typography>
       <TreeView sx={{ paddingTop: '15px' }}>
-        {
-          item.recipe.map((craftingId: string) => (
-            <ItemDependency key={craftingId} index={item.id} id={craftingId} />
-          ))
-        }
+        {item.recipe.map((craftingId: string, index: number) => (
+          <ItemDependency
+            key={craftingId + index}
+            index={item.id}
+            id={craftingId}
+          />
+        ))}
       </TreeView>
     </Box>
-  )
+  );
 }
 
-function CraftsIntoItemList(props: {item: TItem}) {
-  const { item } = props;
+function CraftsIntoItemList(props: {
+  item: TItem;
+  onItemSelect?: (id: string) => void;
+}) {
+  const { item, onItemSelect } = props;
   if (item.partOf?.length === 0) return null;
   return (
-    <Box sx={{ width: '500px', paddingTop: '15px'}}>
+    <Box sx={{ width: '400px', paddingTop: '15px' }}>
       <Typography variant="h6">Crafts into</Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
-          {item.partOf?.map((id) => (
-            <EvoItemRenderer key={id} id={id} />
-          ))}
-        </Box>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
+        {item.partOf?.map((id) => (
+          <EvoItemRenderer key={id} id={id} onClick={onItemSelect} />
+        ))}
+      </Box>
     </Box>
-  )
+  );
 }
 
-function ItemDependency(props: {id: string; index: string;}) {
+function ItemDependency(props: { id: string; index: string }) {
   const { items } = useItemContext();
   const { id, index } = props;
   const item = items[id];
@@ -86,40 +92,72 @@ function ItemDependency(props: {id: string; index: string;}) {
 
   if (!item) {
     return (
-      <TreeItem nodeId={newIndex} label={
-        <Box sx={{display:'flex', flexDirection:'row', alignContent: 'center'}}>
-          <Avatar sx={{ bgcolor: grey[500], marginRight: '10px' }} variant="rounded">
-            {id[0]}
-          </Avatar>
-          <Typography variant="body2">{id}</Typography>
-        </Box>
-      }/>
+      <TreeItem
+        nodeId={newIndex}
+        label={
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignContent: 'center',
+            }}
+          >
+            <Avatar
+              sx={{ bgcolor: grey[500], marginRight: '10px' }}
+              variant="rounded"
+            >
+              {id[0]}
+            </Avatar>
+            <Typography variant="body2">{id}</Typography>
+          </Box>
+        }
+      />
     );
   }
   return (
     <TreeItem
       nodeId={newIndex}
       label={
-        <Box sx={{display:'flex', flexDirection:'row', alingItems: 'center', justifyContent: 'space-between'}}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alingItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
           <ItemIconAndTitle item={item} />
-          { item.sourceShort && <Typography variant="body2" sx={{ color: lightBlue[300] }}>{item.sourceShort}</Typography> }
+          {item.sourceShort && (
+            <Typography variant="body2" sx={{ color: lightBlue[300] }}>
+              {item.sourceShort}
+            </Typography>
+          )}
         </Box>
-      }>
-      {
-        item.recipe.map((id, index) => (
-          <ItemDependency key={newIndex + id + '_' + index} index={newIndex} id={id} />
-        ))
       }
+    >
+      {item.recipe.map((id, index) => (
+        <ItemDependency
+          key={newIndex + id + '_' + index}
+          index={newIndex}
+          id={id}
+        />
+      ))}
     </TreeItem>
-  )
+  );
 }
 
-export function ItemIconAndTitle (props: {item: TItem}) {
+export function ItemIconAndTitle(props: { item: TItem }) {
   const { item } = props;
   return (
-    <Box sx={{display:'flex', flexDirection:'row', alingItems: 'center'}}>
-      <Avatar sx={{ bgcolor: grey[500], marginRight: '10px' }} variant="rounded" src={iconFromId(item.icon)}/>
-      <Typography variant="body2" sx={{ color: item.rarity.color }}>{item.id}</Typography>
+    <Box sx={{ display: 'flex', flexDirection: 'row', alingItems: 'center' }}>
+      <Avatar
+        sx={{ bgcolor: grey[500], marginRight: '10px' }}
+        variant="rounded"
+        src={iconFromId(item.icon)}
+      />
+      <Typography variant="body2" sx={{ color: item.rarity.color }}>
+        {item.id}
+      </Typography>
     </Box>
-  )
+  );
 }

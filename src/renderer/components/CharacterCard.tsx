@@ -16,32 +16,42 @@ interface CharacterCardProps {
   favourite?: boolean;
   accountURL: string;
 }
-export function CharacterCard({ character, favourite, accountURL }: CharacterCardProps) {
+export function CharacterCard({
+  character,
+  favourite,
+  accountURL,
+}: CharacterCardProps) {
   const navigate = useNavigate();
   const { addFavouriteClass, removeFavouriteClass } = useSettingsContext();
   const { onLoadClick } = useCharacterContext();
   return (
     <Box sx={{ padding: '10px' }}>
-      <Card sx={{ width: 280, padding: '15px' }}>
+      <Card
+        sx={{ width: 280, padding: '15px', cursor: 'pointer' }}
+        onClick={() => {
+          navigate(`/character/${accountURL}/${character.hero}`);
+        }}
+      >
         <Box
           sx={{
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            paddingBottom: '10px'
+            paddingBottom: '10px',
           }}
         >
-          <Typography
-            onClick={() => {
-              navigate(`/character/${accountURL}/${character.hero}`);
-            }}
-            sx={{ cursor: 'pointer' }}
-            variant="body1"
-          >
+          <Typography variant="body1">
             {character.hero} [ {character.level} ]
           </Typography>
-          <IconButton onClick={() => !favourite ? addFavouriteClass(character.hero) : removeFavouriteClass(character.hero)}>
+          <IconButton
+            onClick={(e) => {
+              e.stopPropagation();
+              !favourite
+                ? addFavouriteClass(character.hero)
+                : removeFavouriteClass(character.hero);
+            }}
+          >
             {favourite ? <StarIcon /> : <StarBorderIcon />}
           </IconButton>
         </Box>
@@ -51,19 +61,22 @@ export function CharacterCard({ character, favourite, accountURL }: CharacterCar
             itemIds={character.inventory}
           />
         </Box>
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
-          <Button variant="contained" onClick={() => onLoadClick(character)}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Button
+            variant="contained"
+            onClick={(e) => {
+              e.stopPropagation();
+              onLoadClick(character);
+            }}
+          >
             Load
-          </Button>
-          <Button onClick={() => {
-            navigate(`/character/${accountURL}/${character.hero}`);
-          }}>
-            Details
           </Button>
         </Box>
       </Card>
