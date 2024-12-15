@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import { BoxProps } from '@mui/material';
-import { EvoItemRenderer } from './ItemWithTooltip';
+import { CompactItem } from './CompactItem';
 
 interface EvoStashProps extends BoxProps {
   itemIds: string[];
@@ -12,7 +12,7 @@ export function EvoStash(props: EvoStashProps) {
     <Box {...rest}>
       {itemIds.map((id, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <EvoItemRenderer key={id + index} id={id} />
+        <CompactItem key={id + index} id={id} />
       ))}
     </Box>
   );

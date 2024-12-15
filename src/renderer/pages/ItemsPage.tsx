@@ -1,7 +1,7 @@
 import { ChangeEvent, useMemo, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import { Input, InputProps } from '@mui/material';
-import { EvoItemRenderer } from '../components/ItemWithTooltip';
+import { CompactItem } from '../components/CompactItem';
 import { useItemContext } from '../contexts/itemsContext';
 
 type DebounceProps = {
@@ -45,7 +45,7 @@ export function ItemsPage() {
       />
       <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
         {filteredItems.map((id) => (
-          <EvoItemRenderer key={id} id={id} />
+          <CompactItem key={id} id={id} />
         ))}
       </Box>
     </Box>

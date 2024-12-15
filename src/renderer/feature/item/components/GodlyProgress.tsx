@@ -3,13 +3,13 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import Divider from '@mui/material/Divider';
-import { ItemIconAndTitle } from './Item';
 import { lightBlue } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import { useMemo, useState } from 'react';
-import { DependencyObj, getItemArrFlatDependenciesObject } from '../util/crafting';
-import { useItemContext } from '../contexts/itemsContext';
+import { DependencyObj, getItemArrFlatDependenciesObject } from '../../../util/crafting';
+import { useItemContext } from '../../../contexts/itemsContext';
+import { ItemIconAndTitle } from './ItemIconAndTitle';
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -110,7 +110,7 @@ function MissingItem(props: {id: string, amount: number}) {
         <Typography sx={{ width: '30px'}}>{amount}  </Typography>
         <ItemIconAndTitle item={item} />
       </Box>
-      { item.sourceShort && <Typography variant="body2" sx={{ color: lightBlue[300] }}>{item.sourceShort}</Typography> }
+      { item.sourceShort && <Typography variant="body2" sx={{ color: lightBlue[300], lineHeight: '40px' }}>{item.sourceShort}</Typography> }
     </Box>
   )
 }

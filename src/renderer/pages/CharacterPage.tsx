@@ -11,7 +11,7 @@ import { EvoStash } from '../components/Stash';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Tooltip from '@mui/material/Tooltip';
-import { GodlyProgress } from '../components/GodlyProgress';
+import { GodlyProgress } from '../feature/item/components/GodlyProgress';
 
 export const CharacterPage: FC = () => {
   const { getCharacter, onLoadClick } = useCharacterContext();

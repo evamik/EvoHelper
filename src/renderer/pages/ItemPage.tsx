@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { EvoItem } from '../components/Item';
+import { EvoItem } from '../feature/item/components/Item';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IconButton from '@mui/material/IconButton';

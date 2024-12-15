@@ -7,7 +7,13 @@ import { iconFromId } from '../icons/icons';
 import { useNavigate } from 'react-router-dom';
 import { useItemContext } from '../contexts/itemsContext';
 
-export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id, onClick }) => {
+interface Props {
+  id?: string,
+  noTooltip?: boolean,
+  onClick?: () => void,
+}
+
+export const CompactItem: FC<Props> = ({ id, noTooltip, onClick }) => {
   const { items } = useItemContext();
   const navigate = useNavigate();
   if (!id) {
@@ -31,7 +37,11 @@ export const EvoItemRenderer: FC<{ id?: string, onClick?: () => void }> = ({ id,
       sx={{
         boxShadow: 3
       }}
-      title={<ItemCard id={id} item={items[id]} />}
+      title={
+        !noTooltip 
+          ? <ItemCard id={id} item={items[id]} /> 
+          : null
+        }
       placement="right-start"
     >
       <Avatar
