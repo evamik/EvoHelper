@@ -13,10 +13,10 @@ import { useCharacterContext } from './contexts/characterContext';
 import { ItemsPage } from './pages/ItemsPage';
 import { CharacterPage } from './pages/CharacterPage';
 import { LoaderPage } from './pages/LoaderPage';
+import { DamagePage } from './pages/DamagePage'
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
 import { LastRunInfoPage } from './pages/LastRunInfoPage';
-import { useEffect } from 'react';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
@@ -47,7 +47,7 @@ export default function App() {
                   alignItems: 'center',
                 }}
               >
-                <Typography>Evo Helper 1.1.0</Typography>
+                <Typography>Evo Helper 1.2.0</Typography>
                 <IconButton onClick={loadClasses}>
                   <CachedIcon />
                 </IconButton>
@@ -64,6 +64,9 @@ export default function App() {
                 </MenuItem>
                 <MenuItem component={Link} to="/lastruninfo">
                   Last run info
+                </MenuItem>
+                <MenuItem component={Link} to="/damage">
+                  Run damage
                 </MenuItem>
               </MenuList>
             </Box>
@@ -88,10 +91,11 @@ export default function App() {
             <Routes>
               <Route path="/items" element={<ItemsPage/>}/>
               <Route path="/item/:id" element={<ItemPage/>}/>
-              <Route path="/characters/:accountURL?" element={<LoaderPage />} />
-              <Route path="/settings" element={<Settings />} />
+              <Route path="/characters/:accountURL?" element={<LoaderPage />}/>
+              <Route path="/settings" element={<Settings />}/>
+              <Route path="/damage" element={<DamagePage />}/>
               <Route path="/fishing" element={<FishingPage />} />
-              <Route path="/lastruninfo" element={<LastRunInfoPage />} />
+              <Route path="/lastruninfo" element={<LastRunInfoPage />}/>
               <Route path="/character/:accountURL/:id" element={<CharacterPage />} />
             </Routes>
             </Box>
