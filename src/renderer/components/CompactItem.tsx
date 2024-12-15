@@ -16,13 +16,17 @@ interface Props {
 export const CompactItem: FC<Props> = ({ id, noTooltip, onClick }) => {
   const { items } = useItemContext();
   const navigate = useNavigate();
-  const handleClick = useCallback(() => {
-    if (onClick) {
-      onClick();
-    } else {
-      navigate(`/item/${id}`);
-    }
-  }, [onClick]);
+  const handleClick = useCallback(
+    (event: React.MouseEvent) => {
+      event.stopPropagation();
+      if (onClick) {
+        onClick();
+      } else {
+        navigate(`/item/${id}`);
+      }
+    },
+    [onClick],
+  );
   if (!id) {
     return (
       <Avatar src={iconFromId('EmptySlotIcon')} variant="rounded">

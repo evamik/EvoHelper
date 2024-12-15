@@ -10,13 +10,38 @@ import { ItemIconAndTitle } from './ItemIconAndTitle';
 interface CraftsIntoProps {
   item: TItem;
   onItemSelect?: (id: string) => void;
+  playerItems?: string[] | null;
 }
 
 export const CraftsInto: FC<CraftsIntoProps> = (props) => {
-  const { item, onItemSelect } = props;
+  const { item, onItemSelect, playerItems } = props;
   const { items } = useItemContext();
+  const navigate = useNavigate();
 
   const usedForItemsArr = item.partOf.map((id) => items[id]);
+
+  const handleItemClick = useCallback(
+    (id: string) => {
+      if (onItemSelect) {
+        onItemSelect(id);
+      } else if (playerItems) {
+        navigate(`/item/${id}`, {
+          state: { playerItems: [...(playerItems || null)] },
+        });
+      }
+    },
+    [playerItems, onItemSelect],
+  );
+
+  const getOnClickHandler = useCallback(
+    (id: string) => {
+      if (playerItems || onItemSelect) {
+        return () => handleItemClick(id);
+      }
+      return undefined;
+    },
+    [handleItemClick, playerItems, onItemSelect],
+  );
 
   if (usedForItemsArr.length === 0) return null;
 
@@ -24,9 +49,16 @@ export const CraftsInto: FC<CraftsIntoProps> = (props) => {
     <Box sx={{ width: '500px', paddingTop: '5px' }}>
       <Typography variant="h6">Used for</Typography>
       {usedForItemsArr.length > 4 ? (
-        <TiledItems items={usedForItemsArr} onItemSelect={onItemSelect} />
+        <TiledItems
+          items={usedForItemsArr}
+          getOnClickHandler={getOnClickHandler}
+        />
       ) : (
-        <ListedItems items={usedForItemsArr} />
+        <ListedItems
+          items={usedForItemsArr}
+          onItemSelect={onItemSelect}
+          playerItems={playerItems}
+        />
       )}
     </Box>
   );
@@ -34,28 +66,20 @@ export const CraftsInto: FC<CraftsIntoProps> = (props) => {
 
 function TiledItems({
   items,
-  onItemSelect,
+  getOnClickHandler,
 }: {
   items: TItem[];
-  onItemSelect?: (id: string) => void;
+  getOnClickHandler: (id: string) => (() => void) | undefined;
 }) {
   if (!items || items.length === 0) return null;
 
-  const handleClick = useCallback(
-    (item: TItem) => {
-      if (onItemSelect) {
-        onItemSelect(item.id);
-      }
-    },
-    [onItemSelect],
-  );
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '5px' }}>
       {items.map((item) => (
         <CompactItem
           key={`used_for_${item.id}`}
           id={item.id}
-          onClick={onItemSelect ? () => handleClick(item) : undefined}
+          onClick={getOnClickHandler(item.id)}
         />
       ))}
     </Box>
@@ -65,29 +89,43 @@ function TiledItems({
 function ListedItems({
   items,
   onItemSelect,
+  playerItems,
 }: {
   items: TItem[];
   onItemSelect?: (id: string) => void;
+  playerItems?: string[] | null;
 }) {
-  if (items.length === 0) return null;
   const navigate = useNavigate();
+  if (items.length === 0) return null;
 
-  const handleClick = useCallback(
-    (item: TItem) => {
+  const handleItemClick = useCallback(
+    (id: string) => {
       if (onItemSelect) {
-        onItemSelect(item.id);
-      } else {
-        navigate(`/item/${item.id}`);
+        onItemSelect(id);
+      } else if (playerItems) {
+        navigate(`/item/${id}`, {
+          state: { playerItems: [...(playerItems || [])] },
+        });
       }
     },
-    [onItemSelect],
+    [playerItems, onItemSelect],
+  );
+
+  const getOnClickHandler = useCallback(
+    (id: string) => {
+      if (playerItems || onItemSelect) {
+        return () => handleItemClick(id);
+      }
+      return () => navigate(`/item/${id}`);
+    },
+    [handleItemClick, playerItems, onItemSelect],
   );
 
   return (
     <Box sx={{ paddingTop: '5px' }}>
       {items.map((item) => (
         <ItemIconAndTitle
-          key={item.id}
+          key={`used_for_${item.id}`}
           sx={{
             paddingLeft: '30px',
             cursor: 'pointer',
@@ -95,7 +133,7 @@ function ListedItems({
               background: '#2b2b2b',
             },
           }}
-          onClick={() => handleClick(item)}
+          onClick={getOnClickHandler(item.id)}
           item={item}
         />
       ))}

@@ -9,14 +9,15 @@ import { ItemDependenciesTree } from './DependencyTree';
 interface EvoItemProps extends BoxProps {
   item: TItem;
   onItemSelect?: (id: string) => void;
+  playerItems?: string[] | null;
 }
 
 export function EvoItem(props: EvoItemProps) {
-  const { item, onItemSelect, sx, ...rest } = props;
+  const { item, onItemSelect, playerItems, sx, ...rest } = props;
   const { color } = item.rarity;
 
   return (
-    <Box {...rest} sx={{ maxWidth: '600px' }}>
+    <Box {...rest} sx={{ maxWidth: onItemSelect ? '400px' : '600px' }}>
       <Box
         sx={{ display: 'flex', flexDirection: 'row', paddingBottom: '10px' }}
       >
@@ -38,7 +39,11 @@ export function EvoItem(props: EvoItemProps) {
         </Typography>
       ))}
       <ItemDependenciesTree item={item} />
-      <CraftsInto item={item} onItemSelect={onItemSelect} />
+      <CraftsInto
+        item={item}
+        onItemSelect={onItemSelect}
+        playerItems={playerItems}
+      />
     </Box>
   );
 }

@@ -18,7 +18,8 @@ export const ItemPage: FC<ItemPageParams> = ({ ...props }) => {
   const { id: paramId } = useParams();
   const { items } = useItemContext();
   const location = useLocation();
-  const playerItems = location.state?.playerItems;
+  const playerItemsState = location.state?.playerItems;
+  const playerItems = playerItemsState?.length > 0 ? playerItemsState : null;
 
   const id = itemId || paramId;
 
@@ -46,13 +47,15 @@ export const ItemPage: FC<ItemPageParams> = ({ ...props }) => {
           <EvoItem
             item={itemId ? items[itemId] : items[id]}
             onItemSelect={onItemSelect}
+            playerItems={playerItems}
           />
         </Box>
-        {playerItems && (
+        {playerItems && !onItemSelect && (
           <>
             <Divider orientation="vertical" flexItem sx={{ marginX: '16px' }} />
             <Box sx={{ width: '100%', minWidth: '400px' }}>
               <BuildProgress
+                title="Missing items to craft this item"
                 itemIdsList={playerItems}
                 buildItems={[id]}
                 defaultExpanded={true}

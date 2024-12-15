@@ -30,10 +30,12 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export const BuildProgress = ({
+  title,
   itemIdsList,
   buildItems,
   defaultExpanded = false,
 }: {
+  title: string;
   itemIdsList: Array<string>;
   buildItems: string[];
   defaultExpanded?: boolean;
@@ -74,7 +76,7 @@ export const BuildProgress = ({
           alignItems: 'center',
         }}
       >
-        <Typography>Build progress</Typography>
+        <Typography>{title}</Typography>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

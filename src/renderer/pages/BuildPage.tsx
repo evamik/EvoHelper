@@ -177,6 +177,7 @@ export const BuildPage: FC = () => {
         <Divider orientation="vertical" flexItem sx={{ marginX: '16px' }} />
         <Box sx={{ width: '100%', minWidth: '400px' }}>
           <BuildProgress
+            title="Items needed to craft this build"
             itemIdsList={playerItems}
             buildItems={items}
             defaultExpanded={!!playerItems}
