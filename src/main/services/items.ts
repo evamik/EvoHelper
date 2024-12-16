@@ -5,8 +5,9 @@ export function createItemsService (prismaClient: PrismaClient) {
     const formatItem = (item: any): TItem => { // shameless 'any' plug
         const recipe = item.recipe.map((e: { id: string; }) => e.id);
         return {
-            id: item.id,
-            name: item.name,
+            integerId: item.id,
+            id: item.name,
+            name: item.displayName,
             icon: item.icon,
             legacyItem: !!item.legacyItem,
             description: item.description || '',
@@ -29,11 +30,11 @@ export function createItemsService (prismaClient: PrismaClient) {
     }
 
     return {
-        async getUnformattedItemById(id: string) {
+        async getUnformattedItemById(name: string) {
             const item = await prismaClient.item.findUnique({
                 include,
                 where: {
-                    id: id
+                    name: name
                 }
             })
 
@@ -42,11 +43,11 @@ export function createItemsService (prismaClient: PrismaClient) {
             return item;
         },
 
-        async getItemById(id: string) {
+        async getItemById(name: string) {
             const item = await prismaClient.item.findUnique({
                 include,
                 where: {
-                    id: id
+                    name: name
                 }
             })
 

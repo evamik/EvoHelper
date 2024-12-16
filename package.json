@@ -3,7 +3,6 @@
   "main": "./src/main/main.ts",
   "license": "MIT",
   "prisma": {
-    "seed": "ts-node -T --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts",
     "schema": "./prisma/schema.prisma"
   },
   "scripts": {
