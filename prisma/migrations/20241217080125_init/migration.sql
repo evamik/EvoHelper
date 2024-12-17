@@ -27,11 +27,11 @@ CREATE TABLE "Item" (
 -- CreateTable
 CREATE TABLE "ItemRecipes" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "pieceId" INTEGER NOT NULL,
-    "resultId" INTEGER NOT NULL,
+    "outputId" INTEGER NOT NULL,
+    "inputId" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL DEFAULT 1,
-    CONSTRAINT "ItemRecipes_pieceId_fkey" FOREIGN KEY ("pieceId") REFERENCES "Item" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "ItemRecipes_resultId_fkey" FOREIGN KEY ("resultId") REFERENCES "Item" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "ItemRecipes_inputId_fkey" FOREIGN KEY ("inputId") REFERENCES "Item" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "ItemRecipes_outputId_fkey" FOREIGN KEY ("outputId") REFERENCES "Item" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable
@@ -68,7 +68,7 @@ CREATE UNIQUE INDEX "Item_id_key" ON "Item"("id");
 CREATE UNIQUE INDEX "Item_name_key" ON "Item"("name");
 
 -- CreateIndex
-CREATE INDEX "ItemRecipes_pieceId_resultId_idx" ON "ItemRecipes"("pieceId", "resultId");
+CREATE INDEX "ItemRecipes_inputId_outputId_idx" ON "ItemRecipes"("inputId", "outputId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ItemRarity_id_key" ON "ItemRarity"("id");

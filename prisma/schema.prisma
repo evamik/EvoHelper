@@ -37,13 +37,13 @@ model Item {
 
 model ItemRecipes {
   id       Int  @id @default(autoincrement())
-  recipe   Item @relation("recipe", fields: [pieceId], references: [id])
-  pieceId  Int
-  partOf   Item @relation("partOf", fields: [resultId], references: [id])
-  resultId Int
+  outputId Int
+  inputId  Int
+  input   Item @relation("partOf", fields: [inputId], references: [id])
+  output   Item @relation("recipe", fields: [outputId], references: [id])
   quantity Int  @default(1)
 
-  @@index([pieceId, resultId])
+  @@index([inputId, outputId])
 }
 
 model ItemRestriction {

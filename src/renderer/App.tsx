@@ -18,6 +18,7 @@ import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
 import { LastRunInfoPage } from './pages/LastRunInfoPage';
 import { useSettingsContext } from './contexts/settingsContext';
+import { iconFromId } from './icons/icons';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();

@@ -20,7 +20,9 @@ export const DamageBarsView: FC<Props> = (props) => {
     return (
         <Box sx={{ marginTop: '10px' }}>
             {damageReport.players.map((el, index) => (
-                <Box sx={{ position: 'relative', height: '30px' }}>
+                <Box 
+                    key={`${damageReport.damageType}_${el.playerName}`} 
+                    sx={{ position: 'relative', height: '30px' }}>
                     <div style={{ position: 'absolute', top: 4, left: 10}}>{index + 1}.&nbsp;{el.playerName}&nbsp;[{el.className}]</div>
                     <div style={{ position: 'absolute', top: 4, right: 5 }}>{el.damagePercentage}%</div>
                     <Box sx={{ 
