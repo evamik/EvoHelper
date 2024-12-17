@@ -23,7 +23,7 @@ export const parseLastRun = async (path: string) => {
 
   return `> **${title}**\n` +
     data
-      .map((el) => `${el.shift()} - ${el.shift()}: ${el.join(', ')}`)
+      .map((el, index) => `${index + 1}. ${el.shift()} - ${el.shift()}: ${el.join(', ')}`)
       .join('\n');
 }
 

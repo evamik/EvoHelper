@@ -1,10 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
-import { EvoItem } from '../feature/item/components/Item';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { useItemContext } from '../contexts/itemsContext';
+import { EvoItem } from '../feature/item/components/Item';
 
 export function ItemPage() {
   const { id } = useParams();

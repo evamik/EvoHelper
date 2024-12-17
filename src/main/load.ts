@@ -37,6 +37,8 @@ const parseClassFile = (str: string): IClassLoad => {
     hero: extractKey(str, 'Hero: ', '"'),
     gold: extractKey(str, 'Gold: ', '"'),
     powerShards: extractKey(str, 'Shard: ', '"'),
+    notes: extractKey(str, 'Mysterious Notes: '),
+    sigils: extractKey(str, 'Mysterious Sigils: '),
     code: extractKey(str, '"-l ', '"'),
     inventory: [...Array(6)].map((_, index) => {
       return extractItem(str, `"Item ${index + 1}: `).trim();

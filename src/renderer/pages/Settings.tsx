@@ -24,11 +24,10 @@ export default function Settings() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        padding: '20px 20px 0 0px',
+        padding: '10px 20px 0 0px',
         gap: '15px',
       }}
     >
-      <h3>Settings</h3>
       <TextField
         value={wc3path}
         onChange={(e) => setWc3path(e.target.value)}

@@ -9,12 +9,9 @@ import { ItemIconAndTitle } from './ItemIconAndTitle';
 export function CraftsInto(props: { item: TItem }) {
     const { item } = props;
     const { items } = useItemContext();
-
     const usedForItemsArr = item.partOf.map(id => items[id])
 
     if (usedForItemsArr.length === 0) return null;
-
-
     return (
         <Box sx={{ width: '500px', paddingTop: '5px' }}>
             <Typography variant="h6">Used for</Typography>
@@ -28,8 +25,7 @@ export function CraftsInto(props: { item: TItem }) {
 }
 
 function TiledItems({ items }: { items: TItem[] }) {
-    if (items.length === 0) return null;
-
+    if (!items || items.length === 0) return null;
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', paddingTop: '5px' }}>
             {items.map((item) => (
@@ -47,6 +43,7 @@ function ListedItems({ items }: { items: TItem[] }) {
         <Box sx={{ paddingTop: '5px' }}>
             {items.map((item) => (
                 <ItemIconAndTitle 
+                    key={item.id}
                     sx={{
                         paddingLeft: '30px',
                         cursor: 'pointer',
