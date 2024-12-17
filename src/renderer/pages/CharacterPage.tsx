@@ -35,9 +35,15 @@ export const CharacterPage: FC = () => {
       </Typography>
       <Typography variant="caption">Gold: {character.gold}</Typography>
       <br />
-      <Typography variant="caption">
-        PowerShards: {character.powerShards}
-      </Typography>
+      <Typography variant="caption">PowerShards: {character.powerShards}</Typography>
+      {character.notes && (<>
+        <br/>
+        <Typography variant="caption">Mysterious Notes: {character.notes}</Typography>
+      </>)}
+      {character.notes && (<>
+        <br/>
+        <Typography variant="caption">Mysterious Sigils: {character.sigils}</Typography>
+      </>)}
       <Grid container>
         <Grid item sx={{ marginRight: '20px' }}>
           <EvoStash itemIds={character.inventory} />

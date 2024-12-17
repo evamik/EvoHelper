@@ -14,7 +14,6 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     // calling it once for now
     useEffect(() => {
         window.electron.ipcRenderer.on('get_all_items', (arg: any) => {
-            console.log(arg);
             // trusting this one
             setItems(arg);
           });

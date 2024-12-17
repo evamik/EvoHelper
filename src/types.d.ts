@@ -4,6 +4,8 @@ export interface IClassLoad {
   hero: string;
   gold: string;
   level?: string;
+  notes: string;
+  sigils: string;
   powerShards: string;
   inventory: Loadout;
   stashes: Loadout[];

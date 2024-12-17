@@ -10,11 +10,13 @@ export const DamageTypeSelector = () => {
 
     const types = Object.keys(damageTypes);
 
-    const hangleChange = (    
+    const hangleChange = (
         event: React.MouseEvent<HTMLElement>,
         type: string | null
     ) => {
-        navigate(`/damagereport/${type || ''}`)
+        if (type) {
+            navigate(`/damagereport/${type}`)
+        }
     }
 
     const buttons = types.map(name => (
@@ -24,7 +26,7 @@ export const DamageTypeSelector = () => {
     ))
     return (
         <ToggleButtonGroup
-            sx={{ alignSelf:'end', marginLeft:'auto' }}
+            sx={{ alignSelf: 'end', marginLeft: 'auto' }}
             size="small"
             exclusive
             value={type || types[0]}
