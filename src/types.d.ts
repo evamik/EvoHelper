@@ -10,6 +10,15 @@ export interface IClassLoad {
   code: string;
 }
 
+interface IDamagePerPlayer { 
+  damageType: string;
+  players: Array<{
+    playerName: string;
+    className: string;
+    damagePercentage: number;
+  }> 
+}
+
 type TItem = {
   integerId: number;
   id: string;

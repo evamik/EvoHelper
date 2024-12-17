@@ -10,7 +10,6 @@ export function LastRunInfoPage() {
       setInfo(arg);
     });
     window.electron.ipcRenderer.sendMessage('request_last_run', wc3path);
-
   }, [wc3path]);
   return (
     <Paper sx={{

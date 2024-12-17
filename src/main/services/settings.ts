@@ -41,3 +41,5 @@ export function createSettingsService (getPath: (type: 'userData' | 'documents')
         }
     }
 }
+
+export type SettingsService = ReturnType<typeof createSettingsService>

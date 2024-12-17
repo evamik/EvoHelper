@@ -20,6 +20,7 @@ import { parseLastRun } from './lastrun';
 import { createClassesService } from './services/classes';
 import { createItemsService } from './services/items';
 import { createSettingsService } from './services/settings';
+import { createDamageService } from './services/damage';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -34,6 +35,7 @@ export const prismaClient = new PrismaClient({
 })
 
 const settingsService = createSettingsService(app.getPath.bind(app))
+const damageService = createDamageService(settingsService);
 const classesService = createClassesService(prismaClient)
 const itemsService = createItemsService(prismaClient)
 
@@ -66,6 +68,13 @@ ipcMain.on('fishing_disarm', async () => {
 ipcMain.on('settings_read', async (event) => {
   event.reply('settings_read', await settingsService.getSettings())
 });
+
+ipcMain.on(
+  'get_latest_damage_by_type',
+   async (event) => {
+      const res = await damageService.getLatestRunPerDamageType();
+      event.reply('get_latest_damage_by_type', res);
+   });
 
 ipcMain.on('get_all_classes', async (event) => {
   event.reply('get_all_classes', await classesService.getAllClasses())

@@ -1,13 +1,24 @@
 import { PrismaClient } from '@prisma/client'
-import { createClassesService } from './classes'
 import { createItemsService } from './items'
+import { createSettingsService } from './settings'
+import { createDamageService } from './damage'
 
 const prismaClient = new PrismaClient()
 
-async function main() {
-    const itemService = createItemsService(prismaClient)
+const settingsServiceMock = {
+    getSettings: () => {
+        return {
+            wc3path: "C:\\Users\\Shiro\\Documents\\Warcraft III"
+        }
+    }
+}
 
-    console.log(await itemService.getUnformattedItemById('Aerielis'))
+async function main() {
+    //    const itemService = createItemsService(prismaClient)
+    //    console.log(await itemService.getUnformattedItemById('Aerielis'))
+    const damageService = createDamageService(settingsServiceMock);
+   // console.log(JSON.stringify(await damageService.getLatestRunPerPlayer(), null, 4));
+    console.log(JSON.stringify(await damageService.getLatestRunPerDamageType(), null, 4));
 }
 
 main()

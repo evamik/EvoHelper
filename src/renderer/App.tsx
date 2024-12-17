@@ -13,13 +13,21 @@ import { useCharacterContext } from './contexts/characterContext';
 import { ItemsPage } from './pages/ItemsPage';
 import { CharacterPage } from './pages/CharacterPage';
 import { LoaderPage } from './pages/LoaderPage';
-import { DamagePage } from './pages/DamagePage'
+import { DamagePage } from './feature/damage/DamagePage'
 import { ItemPage } from './pages/ItemPage';
 import { FishingPage } from './pages/FishingPage';
 import { LastRunInfoPage } from './pages/LastRunInfoPage';
+import { useSettingsContext } from './contexts/settingsContext';
 
 export default function App() {
   const { loadClasses } = useCharacterContext();
+  const { wc3path } = useSettingsContext();
+
+  const onRefreshClick = () => {
+    loadClasses()
+    window.electron.ipcRenderer.sendMessage('request_last_run', wc3path);
+    window.electron.ipcRenderer.sendMessage('get_latest_damage_by_type');
+  }
 
   return (
     <Router initialEntries={[ '/characters' ]}>
@@ -48,7 +56,7 @@ export default function App() {
                 }}
               >
                 <Typography>Evo Helper 1.2.0</Typography>
-                <IconButton onClick={loadClasses}>
+                <IconButton onClick={onRefreshClick}>
                   <CachedIcon />
                 </IconButton>
               </Box>
@@ -65,7 +73,7 @@ export default function App() {
                 <MenuItem component={Link} to="/lastruninfo">
                   Last run info
                 </MenuItem>
-                <MenuItem component={Link} to="/damage">
+                <MenuItem component={Link} to="/damagereport/Boss">
                   Run damage
                 </MenuItem>
               </MenuList>
@@ -93,7 +101,7 @@ export default function App() {
               <Route path="/item/:id" element={<ItemPage/>}/>
               <Route path="/characters/:accountURL?" element={<LoaderPage />}/>
               <Route path="/settings" element={<Settings />}/>
-              <Route path="/damage" element={<DamagePage />}/>
+              <Route path="/damagereport/:type" element={<DamagePage />}/>
               <Route path="/fishing" element={<FishingPage />} />
               <Route path="/lastruninfo" element={<LastRunInfoPage />}/>
               <Route path="/character/:accountURL/:id" element={<CharacterPage />} />
